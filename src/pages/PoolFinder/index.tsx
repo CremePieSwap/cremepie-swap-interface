@@ -144,7 +144,7 @@ export default function PoolFinder() {
             hasPosition && pair ? (
               <MinimalPositionCard pair={pair} border="1px solid #CED0D9" />
             ) : (
-              <GreyCard>
+              <GreyCard style={{marginTop: 30}}>
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">You don’t have liquidity in this pool yet.</Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
@@ -154,7 +154,7 @@ export default function PoolFinder() {
               </GreyCard>
             )
           ) : validPairNoLiquidity ? (
-            <GreyCard>
+            <GreyCard style={{marginTop: 30}}>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center">No pool found.</Text>
                 <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
@@ -163,7 +163,7 @@ export default function PoolFinder() {
               </AutoColumn>
             </GreyCard>
           ) : pairState === PairState.INVALID ? (
-            <GreyCard>
+            <GreyCard style={{marginTop: 30}}>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center" fontWeight={500}>
                   Invalid pair.
@@ -171,7 +171,7 @@ export default function PoolFinder() {
               </AutoColumn>
             </GreyCard>
           ) : pairState === PairState.LOADING ? (
-            <GreyCard>
+            <GreyCard style={{marginTop: 30}}>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center">
                   Loading

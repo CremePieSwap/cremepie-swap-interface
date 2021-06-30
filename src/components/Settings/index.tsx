@@ -1,12 +1,12 @@
 import React, { useContext, useRef, useState } from 'react'
-import { Settings, X } from 'react-feather'
+import { X } from 'react-feather'
 import { Text } from 'rebass'
 import styled, { ThemeContext } from 'styled-components'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleSettingsMenu } from '../../state/application/hooks'
 import {
-  useDarkModeManager,
+  // useDarkModeManager,
   useExpertModeManager,
   useUserTransactionTTL,
   useUserSlippageTolerance
@@ -19,15 +19,16 @@ import QuestionHelper from '../QuestionHelper'
 import { RowBetween, RowFixed } from '../Row'
 import Toggle from '../Toggle'
 import TransactionSettings from '../TransactionSettings'
+import SwapIcon1 from '../../assets/svg/swap_icon_1.svg'
 
-const StyledMenuIcon = styled(Settings)`
-  height: 20px;
-  width: 20px;
+// const StyledMenuIcon = styled(Settings)`
+//   height: 20px;
+//   width: 20px;
 
-  > * {
-    stroke: ${({ theme }) => theme.text1};
-  }
-`
+//   > * {
+//     stroke: ${({ theme }) => theme.text1};
+//   }
+// `
 
 const StyledCloseIcon = styled(X)`
   height: 20px;
@@ -41,37 +42,37 @@ const StyledCloseIcon = styled(X)`
   }
 `
 
-const StyledMenuButton = styled.button`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  height: 35px;
-  background-color: ${({ theme }) => theme.bg3};
+// const StyledMenuButton = styled.button`
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   border: none;
+//   background-color: transparent;
+//   margin: 0;
+//   padding: 0;
+//   height: 35px;
+//   background-color: ${({ theme }) => theme.bg3};
 
-  padding: 0.15rem 0.5rem;
-  border-radius: 0.5rem;
+//   padding: 0.15rem 0.5rem;
+//   border-radius: 0.5rem;
 
-  :hover,
-  :focus {
-    cursor: pointer;
-    outline: none;
-    background-color: ${({ theme }) => theme.bg4};
-  }
+//   :hover,
+//   :focus {
+//     cursor: pointer;
+//     outline: none;
+//     background-color: ${({ theme }) => theme.bg4};
+//   }
 
-  svg {
-    margin-top: 2px;
-  }
-`
-const EmojiWrapper = styled.div`
-  position: absolute;
-  bottom: -6px;
-  right: 0px;
-  font-size: 14px;
-`
+//   svg {
+//     margin-top: 2px;
+//   }
+// `
+// const EmojiWrapper = styled.div`
+//   position: absolute;
+//   bottom: -6px;
+//   right: 0px;
+//   font-size: 14px;
+// `
 
 const StyledMenu = styled.div`
   margin-left: 0.5rem;
@@ -93,8 +94,7 @@ const MenuFlyout = styled.span`
   flex-direction: column;
   font-size: 1rem;
   position: absolute;
-  top: 4rem;
-  right: 0rem;
+  top: 2rem;
   z-index: 100;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -135,7 +135,7 @@ export default function SettingsTab() {
 
   const [expertMode, toggleExpertMode] = useExpertModeManager()
 
-  const [darkMode, toggleDarkMode] = useDarkModeManager()
+  // const [darkMode, toggleDarkMode] = useDarkModeManager()
 
   // show confirmation view before turning on
   const [showConfirmation, setShowConfirmation] = useState(false)
@@ -182,7 +182,8 @@ export default function SettingsTab() {
           </AutoColumn>
         </ModalContentWrapper>
       </Modal>
-      <StyledMenuButton onClick={toggle} id="open-settings-dialog-button">
+      <img src={SwapIcon1} alt="" style={{ marginRight: 10 }} onClick={toggle} id="open-settings-dialog-button"/>
+      {/* <StyledMenuButton onClick={toggle} id="open-settings-dialog-button">
         <StyledMenuIcon />
         {expertMode ? (
           <EmojiWrapper>
@@ -191,7 +192,7 @@ export default function SettingsTab() {
             </span>
           </EmojiWrapper>
         ) : null}
-      </StyledMenuButton>
+      </StyledMenuButton> */}
       {open && (
         <MenuFlyout>
           <AutoColumn gap="md" style={{ padding: '1rem' }}>
@@ -230,14 +231,14 @@ export default function SettingsTab() {
                 }
               />
             </RowBetween>
-            <RowBetween>
+            {/* <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
                   Toggle Dark Mode
                 </TYPE.black>
               </RowFixed>
               <Toggle isActive={darkMode} toggle={toggleDarkMode} />
-            </RowBetween>
+            </RowBetween> */}
           </AutoColumn>
         </MenuFlyout>
       )}

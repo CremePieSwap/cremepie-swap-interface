@@ -5,8 +5,8 @@ import { NavLink, Link as HistoryLink } from 'react-router-dom'
 
 import { ArrowLeft } from 'react-feather'
 import { RowBetween } from '../Row'
+import Settings from '../Settings'
 import QuestionHelper from '../QuestionHelper'
-import SwapIcon1 from '../../assets/svg/swap_icon_1.svg'
 import SwapIcon2 from '../../assets/svg/swap_icon_2.svg'
 
 const Tabs = styled.div`
@@ -53,6 +53,9 @@ const StylePageSubtitle = styled.div`
   font-size: 14px;
   line-height: 40px;
   font-weight: 500;
+  &.pool {
+    margin-bottom: 120px;
+  }
 `
 const StyleButtons = styled.div`
   img {
@@ -72,12 +75,14 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
           {t('Liquidity')}
         </StyledNavLink>
       </Tabs>
-      <StylePageTitle>{active === 'swap' ? 'Exchange' : 'Your Liquidity'}</StylePageTitle>
-      <StylePageSubtitle>{active === 'swap' ? 'Trade tokens in an instant' : 'Remove liquidity to receive tokens back'}</StylePageSubtitle>
-      <StyleButtons style={{marginBottom: 100}}>
-        <img src={SwapIcon1} alt="" style={{ marginRight: 10 }} />
-        <img src={SwapIcon2} alt="" />
-      </StyleButtons>
+      <StylePageTitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Exchange' : 'Your Liquidity'}</StylePageTitle>
+      <StylePageSubtitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Trade tokens in an instant' : 'Remove liquidity to receive tokens back'}</StylePageSubtitle>
+      {active === 'swap' && 
+        <StyleButtons style={{marginBottom: 100, display: 'flex', justifyContent: 'center'}}>
+          <Settings />
+          <img src={SwapIcon2} alt="" />
+        </StyleButtons>
+      }
     </div>
   )
 }
@@ -89,11 +94,7 @@ export function FindPoolTabs() {
         <StyledArrowLeft />
       </HistoryLink>
       <StylePageTitle>Import Pool</StylePageTitle>
-      <StylePageSubtitle>Remove liquidity to receive tokens back</StylePageSubtitle>
-      <StyleButtons style={{marginBottom: 80}}>
-        <img src={SwapIcon1} alt="" style={{ marginRight: 10 }} />
-        <img src={SwapIcon2} alt="" />
-      </StyleButtons>
+      <StylePageSubtitle className="pool">Remove liquidity to receive tokens back</StylePageSubtitle>
       <QuestionHelper text={"Use this tool to find pairs that don't automatically appear in the interface."} />
     </RowBetween>
   )
@@ -106,11 +107,7 @@ export function AddRemoveTabs({ adding, creating }: { adding: boolean; creating:
         <StyledArrowLeft />
       </HistoryLink>
       <StylePageTitle>{creating ? 'Create a pair' : adding ? 'Add Liquidity' : 'Remove Liquidity'}</StylePageTitle>
-      <StylePageSubtitle>Remove liquidity to receive tokens back</StylePageSubtitle>
-      <StyleButtons style={{marginBottom: 80}}>
-        <img src={SwapIcon1} alt="" style={{ marginRight: 10 }} />
-        <img src={SwapIcon2} alt="" />
-      </StyleButtons>
+      <StylePageSubtitle className="pool">Remove liquidity to receive tokens back</StylePageSubtitle>
       <QuestionHelper
         text={
           adding
