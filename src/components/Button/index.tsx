@@ -109,22 +109,18 @@ export const ButtonGray = styled(Base)`
 `
 
 export const ButtonSecondary = styled(Base)`
-  border: 1px solid ${({ theme }) => theme.primary4};
   color: ${({ theme }) => theme.bg4};
+  border: 1px solid ${({ theme }) => theme.text2};
   background-color: transparent;
   border-radius: 12px;
-  padding: ${({ padding }) => (padding ? padding : '10px')};
-
+  font-size: 12px;
   &:focus {
-    box-shadow: 0 0 0 1pt ${({ theme }) => theme.primary4};
-    border: 1px solid ${({ theme }) => theme.primary3};
   }
   &:hover {
-    border: 1px solid ${({ theme }) => theme.primary3};
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
   }
   &:active {
-    box-shadow: 0 0 0 1pt ${({ theme }) => theme.primary4};
-    border: 1px solid ${({ theme }) => theme.primary3};
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
   }
   &:disabled {
     opacity: 50%;
@@ -158,7 +154,7 @@ export const ButtonPink = styled(Base)`
 `
 
 export const ButtonOutlined = styled(Base)`
-  border: 1px solid ${({ theme }) => theme.bg2};
+  border: 1px solid ${({ theme }) => theme.bg4};
   background-color: transparent;
   color: ${({ theme }) => theme.text1};
 

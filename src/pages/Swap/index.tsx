@@ -9,7 +9,6 @@ import { ButtonError, ButtonLight, ButtonPrimary, ButtonConfirmed } from '../../
 import Card, { GreyCard } from '../../components/Card'
 import Column, { AutoColumn } from '../../components/Column'
 import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
-import SwapPageTitle from '../../components/swap/SwapPageTitle'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import { SwapPoolTabs } from '../../components/NavigationTabs'
 import { AutoRow, RowBetween } from '../../components/Row'
@@ -291,7 +290,6 @@ export default function Swap() {
       <AppBody>
         <SwapPoolTabs active={'swap'} />
         <Wrapper id="swap-page">
-          <SwapPageTitle/>
           <ConfirmSwapModal
             isOpen={showConfirm}
             trade={trade}

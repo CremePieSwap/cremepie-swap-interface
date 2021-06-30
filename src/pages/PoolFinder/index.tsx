@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
 import { Text } from 'rebass'
 import { ButtonDropdownLight } from '../../components/Button'
-import { LightCard } from '../../components/Card'
+import { GreyCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { FindPoolTabs } from '../../components/NavigationTabs'
@@ -69,11 +69,13 @@ export default function PoolFinder() {
   }, [setShowSearch])
 
   const prerequisiteMessage = (
-    <LightCard padding="45px 10px">
+    <GreyCard style={{
+      marginTop: 20
+    }}>
       <Text textAlign="center">
         {!account ? 'Connect to a wallet to find pools' : 'Select a token to find your liquidity.'}
       </Text>
-    </LightCard>
+    </GreyCard>
   )
 
   return (
@@ -142,41 +144,41 @@ export default function PoolFinder() {
             hasPosition && pair ? (
               <MinimalPositionCard pair={pair} border="1px solid #CED0D9" />
             ) : (
-              <LightCard padding="45px 10px">
+              <GreyCard>
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">You don’t have liquidity in this pool yet.</Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                     <Text textAlign="center">Add liquidity.</Text>
                   </StyledInternalLink>
                 </AutoColumn>
-              </LightCard>
+              </GreyCard>
             )
           ) : validPairNoLiquidity ? (
-            <LightCard padding="45px 10px">
+            <GreyCard>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center">No pool found.</Text>
                 <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                   Create pool.
                 </StyledInternalLink>
               </AutoColumn>
-            </LightCard>
+            </GreyCard>
           ) : pairState === PairState.INVALID ? (
-            <LightCard padding="45px 10px">
+            <GreyCard>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center" fontWeight={500}>
                   Invalid pair.
                 </Text>
               </AutoColumn>
-            </LightCard>
+            </GreyCard>
           ) : pairState === PairState.LOADING ? (
-            <LightCard padding="45px 10px">
+            <GreyCard>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center">
                   Loading
                   <Dots />
                 </Text>
               </AutoColumn>
-            </LightCard>
+            </GreyCard>
           ) : null
         ) : (
           prerequisiteMessage
