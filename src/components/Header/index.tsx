@@ -119,8 +119,8 @@ const AccountElement = styled.div<{ active: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg3)};
-  border-radius: 12px;
+  background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg2)};
+  border-radius: 40px;
   white-space: nowrap;
   width: 100%;
   cursor: pointer;
@@ -128,9 +128,6 @@ const AccountElement = styled.div<{ active: boolean }>`
   :focus {
     border: 1px solid blue;
   }
-  /* :hover {
-    background-color: ${({ theme, active }) => (!active ? theme.bg2 : theme.bg4)};
-  } */
 `
 
 const UNIAmount = styled(AccountElement)`
@@ -347,9 +344,6 @@ export default function Header({
   return (
     <HeaderFrame>
       <ClaimModal />
-      {/*<Modal isOpen={showUniBalanceModal} onDismiss={() => setShowUniBalanceModal(false)}>
-        <UniBalanceContent setShowUniBalanceModal={setShowUniBalanceModal} />
-      </Modal>*/}
       <HeaderRow>
         <MenuIcon>
           <img onClick={() => set_show_menu()} width={'25px'} src={MenuDark} alt="logo" />
@@ -361,7 +355,6 @@ export default function Header({
         </Title>
         <WrapLinkDesktop></WrapLinkDesktop>
       </HeaderRow>
-      {/* <WrapLinkMobile>{HeaderLink}</WrapLinkMobile> */}
       <HeaderControls>
         <HeaderElement>
           <HideSmall>
@@ -391,7 +384,6 @@ export default function Header({
         </HeaderElement>
         <HeaderElementWrap>
           <Settings />
-          {/* <Menu /> */}
         </HeaderElementWrap>
       </HeaderControls>
     </HeaderFrame>
