@@ -106,7 +106,7 @@ export default function Pool() {
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             {!account ? (
               <Card padding="40px">
-                <TYPE.body color={theme.text3} textAlign="center">
+                <TYPE.body color={theme.white} textAlign="center">
                   Connect to a wallet to view your liquidity.
                 </TYPE.body>
               </Card>
