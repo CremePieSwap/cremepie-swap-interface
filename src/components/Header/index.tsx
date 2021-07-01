@@ -8,7 +8,8 @@ import { Text } from 'rebass'
 import styled from 'styled-components'
 
 import Logo from '../../assets/svg/cremepie.svg'
-import MenuDark from '../../assets/svg/menu.svg'
+import MenuOpen from '../../assets/svg/menu_open.svg'
+import MenuClose from '../../assets/svg/menu_close.svg'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
@@ -77,7 +78,7 @@ const HeaderControls = styled.div`
     left: calc(100vw - 300px);
   `};
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    left: calc(100vw - 160px);
+    left: calc(100vw - 170px);
   `};
 `
 
@@ -291,11 +292,13 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
 }
 
 interface HeaderProps {
-  set_show_menu: () => void
+  set_show_menu: () => void,
+  showMenu: boolean
 }
 
 export default function Header({
-  set_show_menu
+  set_show_menu,
+  showMenu
 }: HeaderProps) {
   const { account, chainId } = useActiveWeb3React()
   // const { t } = useTranslation()
@@ -351,7 +354,7 @@ export default function Header({
       <ClaimModal />
       <HeaderRow>
         <MenuIcon>
-          <img onClick={() => set_show_menu()} width={'25px'} src={MenuDark} alt="logo" />
+          <img onClick={() => set_show_menu()} width={'25px'} src={showMenu ? MenuOpen : MenuClose} alt="menu" />
         </MenuIcon>
         <Title href=".">
           <UniIcon>

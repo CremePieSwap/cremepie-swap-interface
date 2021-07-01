@@ -6,7 +6,7 @@ import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsRepo
 import AddressClaimModal from '../components/claim/AddressClaimModal'
 import Header from '../components/Header'
 import Polling from '../components/Header/Polling'
-import URLWarning from '../components/Header/URLWarning'
+// import URLWarning from '../components/Header/URLWarning'
 import Menu from '../components/Menu'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
@@ -94,9 +94,9 @@ export default function App() {
       <Route component={GoogleAnalyticsReporter} />
       <Route component={DarkModeQueryParamReader} />
       <AppWrapper>
-        <URLWarning />
+        {/* <URLWarning /> */}
         <HeaderWrapper>
-          <Header set_show_menu = {() => setShowMenu(!showMenu)} />
+          <Header set_show_menu = {() => setShowMenu(!showMenu)} showMenu={showMenu} />
         </HeaderWrapper>
         <PageWrapper>
           <Menu showMenu = {showMenu}/>
