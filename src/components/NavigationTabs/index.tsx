@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 import { NavLink, Link as HistoryLink } from 'react-router-dom'
 
 import { ArrowLeft } from 'react-feather'
@@ -69,15 +69,17 @@ const StyleButtons = styled.div`
 `
 
 export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   return (
     <div style={{ textAlign: 'center' }}>
       <Tabs>
         <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
-          {t('swap')}
+          {/* {t('swap')} */}
+          Swap
         </StyledNavLink>
         <StyledNavLink id={`pool-nav-link`} to={'/pool'} isActive={() => active === 'pool'}>
-          {t('Liquidity')}
+          {/* {t('Liquidity')} */}
+          Liquidity
         </StyledNavLink>
       </Tabs>
       <StylePageTitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Exchange' : 'Your Liquidity'}</StylePageTitle>

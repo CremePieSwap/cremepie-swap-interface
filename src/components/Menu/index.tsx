@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 // import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 // import { useActiveWeb3React } from '../../hooks'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
@@ -86,7 +86,7 @@ export default function Menu({
   const open = useModalOpen(ApplicationModal.MENU)
   const toggle = useToggleModal(ApplicationModal.MENU)
   useOnClickOutside(node, open ? toggle : undefined)
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <MenuFlyout ref={node as any} className={`${isMobile ? showMenu ? 'show mobile' : 'hide' : showMenu ? 'show' : 'minimize'}`}>
@@ -113,7 +113,8 @@ export default function Menu({
       >
         <img className='active' src={Active} alt="active" />
         <img src={Pools} alt="pools" />
-        {t('pool')}
+        {/* {t('pool')} */}
+        Pool
       </StyledNavLink>
     </MenuFlyout>
   )

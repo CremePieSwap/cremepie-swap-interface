@@ -66,14 +66,18 @@ const HeaderControls = styled.div`
     width: 100%;
     max-width: 960px;
     padding: 1rem;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
+    position: absolute;
+    left: calc(100vw - 300px);
     width: 100%;
     z-index: 99;
-    height: 72px;
-    border-radius: 12px 12px 0 0;
+    height: 62px;
     background-color: ${({ theme }) => theme.bg1};
+  `};
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    left: calc(100vw - 300px);
+  `};
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    left: calc(100vw - 160px);
   `};
 `
 
