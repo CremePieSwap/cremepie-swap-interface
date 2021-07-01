@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next'
 const InputRow = styled.div<{ selected: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
-  padding: ${({ selected }) => (selected ? '0.25rem 0.5rem 0.5rem 1rem' : '0.25rem 0.75rem 0.5rem 1rem')};
+  padding: ${({ selected }) => (selected ? '0.25rem 0.5rem 0.25rem 1rem' : '0.25rem 0.75rem 0.25rem 1rem')};
 `
 
 const CurrencySelect = styled.button<{ selected: boolean }>`

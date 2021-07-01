@@ -48,6 +48,19 @@ import { ClickableText } from '../Pool/styleds'
 import Loader from '../../components/Loader'
 // import { getRouterContract } from '../../utils'
 
+import styled from 'styled-components'
+
+const SwapDetails = styled.div`
+  margin: 1rem 2rem;
+  background: rgba(91, 90, 153, 0.75);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    margin-top: 0.5rem;
+  `}
+`
+
+
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
 
@@ -455,13 +468,7 @@ export default function Swap() {
               </ButtonError>
             )}
             {showWrap ? null : (
-              <div
-                style={{
-                  margin: '1rem 2rem',
-                  background: 'rgba(91, 90, 153, 0.75)',
-                  borderRadius: 20,
-                  padding: '0.5rem 1rem'
-                }}>
+              <SwapDetails>
                 <Card padding={'0'}>
                   <AutoColumn gap="2px">
                     {Boolean(trade) && (
@@ -526,7 +533,7 @@ export default function Swap() {
                     </RowBetween>
                   </AutoColumn>
                 </Card>
-              </div>
+              </SwapDetails>
             )}
             {showApproveFlow && (
               <Column style={{ marginTop: '1rem' }}>

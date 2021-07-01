@@ -10,7 +10,6 @@ import QuestionHelper from '../QuestionHelper'
 import SwapIcon2 from '../../assets/svg/swap_icon_2.svg'
 
 const Tabs = styled.div`
-  margin-top: 40px;
   width: 180px;
   display: flex;
   margin: 20px auto;
@@ -19,6 +18,9 @@ const Tabs = styled.div`
   background: #FFF7E2;
   border: 1px solid #CCCCCC;
   border-radius: 43px;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    margin: 5px auto;
+  `}
 `
 
 const activeClassName = 'ACTIVE'
@@ -56,6 +58,9 @@ const StylePageSubtitle = styled.div`
   &.pool {
     margin-bottom: 120px;
   }
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    line-height: 32px;
+  `}
 `
 const StyleButtons = styled.div`
   img {
@@ -67,7 +72,7 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
   const { t } = useTranslation()
   return (
     <div style={{ textAlign: 'center' }}>
-      <Tabs style={{ marginBottom: '20px' }}>
+      <Tabs>
         <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
           {t('swap')}
         </StyledNavLink>
