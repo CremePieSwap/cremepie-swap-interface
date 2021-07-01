@@ -45,14 +45,13 @@ const StyledNavLink = styled(NavLink).attrs({
     display: flex;
     align-items: center;
     padding: 1rem;
-    color: ${({ theme }) => theme.text1};
     overflow: hidden;
     text-decoration: none;
-    border-radius: 12px;
     font-weight: 600;
     color: ${({ theme }) => theme.text1};
     :hover {
       color: ${({ theme }) => theme.text2};
+      background: #89DBC420;
       cursor: pointer;
     }
     > img {

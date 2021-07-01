@@ -41,12 +41,12 @@ export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
       ? theme.yellow2
       : severity === 1
       ? theme.text1
-      : theme.green1};
+      : theme.text2};
 `
 
 export const StyledBalanceMaxMini = styled.button`
-  height: 22px;
-  width: 22px;
+  height: 16px;
+  width: 16px;
   background-color: ${({ theme }) => theme.bg2};
   border: none;
   border-radius: 50%;

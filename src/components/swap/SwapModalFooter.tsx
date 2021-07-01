@@ -1,22 +1,22 @@
-import { Trade, TradeType } from '@bscex/sdk'
-import React, { useContext, useMemo, useState } from 'react'
-import { Repeat } from 'react-feather'
+import { Trade } from '@bscex/sdk'
+import React, { useMemo } from 'react'
+// import { Repeat } from 'react-feather'
 import { Text } from 'rebass'
-import { ThemeContext } from 'styled-components'
-import { Field } from '../../state/swap/actions'
-import { TYPE } from '../../theme'
+// import { ThemeContext } from 'styled-components'
+// import { Field } from '../../state/swap/actions'
+// import { TYPE } from '../../theme'
 import {
-  computeSlippageAdjustedAmounts,
+  // computeSlippageAdjustedAmounts,
   computeTradePriceBreakdown,
-  formatExecutionPrice,
+  // formatExecutionPrice,
   warningSeverity
 } from '../../utils/prices'
 import { ButtonError } from '../Button'
-import { AutoColumn } from '../Column'
-import QuestionHelper from '../QuestionHelper'
-import { AutoRow, RowBetween, RowFixed } from '../Row'
-import FormattedPriceImpact from './FormattedPriceImpact'
-import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
+// import { AutoColumn } from '../Column'
+// import QuestionHelper from '../QuestionHelper'
+import { AutoRow } from '../Row'
+// import FormattedPriceImpact from './FormattedPriceImpact'
+import { SwapCallbackError } from './styleds'
 // import { getRouterContract } from '../../utils'
 // import { useActiveWeb3React } from '../../hooks'
 
@@ -33,18 +33,18 @@ export default function SwapModalFooter({
   swapErrorMessage: string | undefined
   disabledConfirm: boolean
 }) {
-  const [showInverted, setShowInverted] = useState<boolean>(false)
-  const theme = useContext(ThemeContext)
+  // const [showInverted, setShowInverted] = useState<boolean>(false)
+  // const theme = useContext(ThemeContext)
   // const { account, chainId, library } = useActiveWeb3React()
-  const slippageAdjustedAmounts = useMemo(() => computeSlippageAdjustedAmounts(trade, allowedSlippage), [
-    allowedSlippage,
-    trade
-  ])
-  const { priceImpactWithoutFee, realizedLPFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
+  // const slippageAdjustedAmounts = useMemo(() => computeSlippageAdjustedAmounts(trade, allowedSlippage), [
+  //   allowedSlippage,
+  //   trade
+  // ])
+  const { priceImpactWithoutFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
   const severity = warningSeverity(priceImpactWithoutFee)
 
   // const [amountBurn, setAmountBurn] = useState(0)
-  const amountBurn = 0
+  // const amountBurn = 0
   // if (chainId && library && account) {
   //   const router = getRouterContract(chainId, library, account)
   //   const method = router.getAmountBurnTokenFee
@@ -58,7 +58,7 @@ export default function SwapModalFooter({
 
   return (
     <>
-      <AutoColumn gap="0px">
+      {/* <AutoColumn gap="0px">
         <RowBetween align="center">
           <Text fontWeight={400} fontSize={14} color={theme.text2}>
             Price
@@ -135,14 +135,13 @@ export default function SwapModalFooter({
             </TYPE.black>
           </RowBetween>
         )}
-      </AutoColumn>
+      </AutoColumn> */}
 
       <AutoRow>
         <ButtonError
           onClick={onConfirm}
           disabled={disabledConfirm}
           error={severity > 2}
-          style={{ margin: '10px 0 0 0' }}
           id="confirm-swap-or-send"
         >
           <Text fontSize={20} fontWeight={500}>

@@ -78,7 +78,7 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
       <StylePageTitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Exchange' : 'Your Liquidity'}</StylePageTitle>
       <StylePageSubtitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Trade tokens in an instant' : 'Remove liquidity to receive tokens back'}</StylePageSubtitle>
       {active === 'swap' && 
-        <StyleButtons style={{marginBottom: 100, display: 'flex', justifyContent: 'center'}}>
+        <StyleButtons style={{marginBottom: 90, display: 'flex', justifyContent: 'center'}}>
           <Settings />
           <img src={SwapIcon2} alt="" />
         </StyleButtons>
