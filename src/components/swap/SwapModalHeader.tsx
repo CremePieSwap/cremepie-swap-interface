@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@bscex/sdk'
+import { Trade, TradeType } from '@cremepie/sdk'
 import React, { useContext, useMemo } from 'react'
 import { ArrowDown, AlertTriangle } from 'react-feather'
 import { Text } from 'rebass'

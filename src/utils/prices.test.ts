@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@bscex/sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@cremepie/sdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

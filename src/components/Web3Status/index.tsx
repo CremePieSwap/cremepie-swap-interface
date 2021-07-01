@@ -18,7 +18,7 @@ import { isTransactionRecent, useAllTransactions } from '../../state/transaction
 import { TransactionDetails } from '../../state/transactions/reducer'
 import { shortenAddress } from '../../utils'
 import { ButtonSecondary } from '../Button'
-import BinanceIcon from '../../assets/images/bnb.svg'
+import BinanceIcon from '../../assets/images/matic.png'
 
 import Identicon from '../Identicon'
 import Loader from '../Loader'

@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token, WETH } from '@bscex/sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from '@cremepie/sdk'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 
 import { fortmatic, injected, binanceinjected, portis, walletconnect, walletlink } from '../connectors'

@@ -1,4 +1,4 @@
-import { ChainId } from '@bscex/sdk'
+import { ChainId } from '@cremepie/sdk'
 import React, { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import Modal from '../Modal'

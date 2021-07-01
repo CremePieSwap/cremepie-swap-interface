@@ -21,7 +21,7 @@ import Identicon from '../Identicon'
 import { ButtonSecondary } from '../Button'
 import { ExternalLink as LinkIcon } from 'react-feather'
 import { ExternalLink, LinkStyledButton, TYPE } from '../../theme'
-import BinanceIcon from '../../assets/images/bnb.svg'
+import BinanceIcon from '../../assets/images/matic.png'
 
 const HeaderRow = styled.div`
   ${({ theme }) => theme.flexRowNoWrap};

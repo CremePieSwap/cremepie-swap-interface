@@ -22,7 +22,7 @@ import AccountDetails from '../AccountDetails'
 import Modal from '../Modal'
 import Option from './Option'
 import PendingView from './PendingView'
-import BinanceIcon from '../../assets/images/bnb.svg'
+import BinanceIcon from '../../assets/images/matic.png'
 
 const CloseIcon = styled.div`
   position: absolute;

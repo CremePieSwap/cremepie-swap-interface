@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@bscex/sdk'
+import { ChainId, Token } from '@cremepie/sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'

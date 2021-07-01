@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token, TokenAmount } from '@bscex/sdk'
+import { Token, TokenAmount } from '@cremepie/sdk'
 import { useTokenContract } from '../hooks/useContract'
 import { useSingleCallResult } from '../state/multicall/hooks'
 

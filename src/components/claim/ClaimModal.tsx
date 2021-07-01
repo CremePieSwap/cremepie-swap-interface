@@ -1,4 +1,4 @@
-import { JSBI, TokenAmount } from '@bscex/sdk'
+import { JSBI, TokenAmount } from '@cremepie/sdk'
 import { isAddress } from 'ethers/lib/utils'
 import React, { useEffect, useState } from 'react'
 import { Text } from 'rebass'

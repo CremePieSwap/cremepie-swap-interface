@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@bscex/sdk'
+import { Token, TokenAmount } from '@cremepie/sdk'
 import { useMemo } from 'react'
 
 import { useTokenContract } from '../hooks/useContract'

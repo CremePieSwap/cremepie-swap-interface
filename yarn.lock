@@ -1129,33 +1129,6 @@
   resolved "https://registry.yarnpkg.com/@bscex/core/-/core-1.0.5.tgz#4b62a48efb9121a3089b4643fdc983ec7c73e517"
   integrity sha512-2ZNgHMSZeXrtaGYDj7PeUyLajXApfBS8Ck0puXPuSGq7SrieA/KnCfXiAovdaqA4tr9X4E0PkBd5Z2ARgjaj7Q==
 
-"@bscex/lib@2.0.8":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@bscex/lib/-/lib-2.0.8.tgz#44d0c46d4d8f711ac17b01029b3f8fd36d4c2787"
-  integrity sha512-lrG7B2pqHCpvDQ1zvmhjKd5a5ZdosEEEm7ULtZ582JqRXbEoFAmi2wvfxezro3fgqxd5mpJtV3ch8AxU0uKbWA==
-
-"@bscex/periphery@1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@bscex/periphery/-/periphery-1.1.6.tgz#00d193bac2f35f9b87eadcd3945cd784c70a8a3c"
-  integrity sha512-F5407rwvAHzC8VVckh9othp2t4lTbD0Eojy7KEkMgMSeXcS1aIs2kUcvMsIc4jypssu2EpDjawBgRxCr6v3DPw==
-  dependencies:
-    "@bscex/core" "1.0.5"
-    "@bscex/lib" "2.0.8"
-
-"@bscex/sdk@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@bscex/sdk/-/sdk-3.2.0.tgz#6c18dbdc8da48801d5ebd70dfe868c656462cad9"
-  integrity sha512-2fZLEELScsGKu5dV4k5SbPTA8e1phuF/MiEUdP4fC3Id5Jj+vgmKu+B6w/b5Dhj2E8w8C8OA/VZf81hwpBnQdA==
-  dependencies:
-    "@bscex/core" "1.0.5"
-    "@uniswap/v2-core" "^1.0.0"
-    big.js "^5.2.2"
-    decimal.js-light "^2.5.0"
-    jsbi "^3.1.1"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-    toformat "^2.0.0"
-
 "@bscswap/binance-connector@^6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@bscswap/binance-connector/-/binance-connector-6.0.10.tgz#404144b225971635ad69abef84e359959bb5bb6d"
@@ -1173,6 +1146,39 @@
   dependencies:
     exec-sh "^0.3.2"
     minimist "^1.2.0"
+
+"@cremepie/core@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@cremepie/core/-/core-1.0.5.tgz#61cc887d75e997b581d31004b4cdb0a4d2ec9f11"
+  integrity sha512-2wPmpZc8pOSwKlyRRE8k5mnbduwUL3awEfgsCQ4rk8CUAzydrKCpUz2pLNK42N+CiU9ivFqSXOCq2ACIPRtTuQ==
+
+"@cremepie/lib@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@cremepie/lib/-/lib-1.0.0.tgz#17bd137d24fbf192d09a5966ee2cbf6520574ebb"
+  integrity sha512-1g68VHUQspyh5YsT+tuFvUA3pjJ6slFGGY0J5UosB4wpkJbiHUOqcmKaiH6I41NQJ6qqjfgWm8DVvax2vx+BoA==
+
+"@cremepie/periphery@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@cremepie/periphery/-/periphery-1.1.5.tgz#6d35a4a84ed9b90b2e6c34e2db93133e22c200b0"
+  integrity sha512-oBJgTfeKAkAVQ2tmqgYgmgiGRzkNoxMtjD2hmrRBcfOtHemfPTOLqe3qEEu63N/JQBpwZWYsBd7xDe+oivxSiA==
+  dependencies:
+    "@cremepie/core" "1.0.5"
+    "@cremepie/lib" "1.0.0"
+
+"@cremepie/sdk@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@cremepie/sdk/-/sdk-1.0.8.tgz#aab2798cafe951be00ae6ee460eee217f843d503"
+  integrity sha512-4ilhPE3VpchPYlaNVruT5KctMHuYU5lddCa3AyWKy37U308RpFk8LGZXjRA1QAqG7pfxrK5N1vpyU3SfnIN/DQ==
+  dependencies:
+    "@bscex/core" "1.0.5"
+    "@cremepie/core" "1.0.5"
+    "@uniswap/v2-core" "^1.0.0"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.1"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"

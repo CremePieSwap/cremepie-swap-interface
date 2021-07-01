@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@bscex/sdk'
+import { Currency, ETHER, Token } from '@cremepie/sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency === ETHER) return 'ETH'

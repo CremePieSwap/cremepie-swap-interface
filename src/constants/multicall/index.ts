@@ -1,4 +1,4 @@
-import { ChainId } from '@bscex/sdk'
+import { ChainId } from '@cremepie/sdk'
 import MULTICALL_ABI from './abi.json'
 
 const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
@@ -8,7 +8,7 @@ const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
   [ChainId.RINKEBY]: '0x42Ad527de7d4e9d9d011aC45B31D8551f8Fe9821',
   [ChainId.GÖRLI]: '0x77dCa2C955b15e9dE4dbBCf1246B4B85b651e50e',
   [ChainId.BSC_MAINNET]: '0xe348b292e8eA5FAB54340656f3D374b259D658b8',
-  [ChainId.BSC_TESTNET]: '0xe348b292e8eA5FAB54340656f3D374b259D658b8'
+  [ChainId.BSC_TESTNET]: '0x85c715fd61cfCdCD22A5286B60A68E99dA929dAd'
 }
 
 export { MULTICALL_ABI, MULTICALL_NETWORKS }

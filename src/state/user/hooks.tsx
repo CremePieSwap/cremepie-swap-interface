@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@bscex/sdk'
+import { ChainId, Pair, Token } from '@cremepie/sdk'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'

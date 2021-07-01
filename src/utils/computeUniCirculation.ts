@@ -1,4 +1,4 @@
-import { JSBI, Token, TokenAmount } from '@bscex/sdk'
+import { JSBI, Token, TokenAmount } from '@cremepie/sdk'
 import { BigNumber } from 'ethers'
 import { STAKING_GENESIS } from '../state/stake/hooks'
 

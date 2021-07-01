@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Token, Trade } from '@bscex/sdk'
+import { Currency, CurrencyAmount, Pair, Token, Trade } from '@cremepie/sdk'
 import flatMap from 'lodash.flatmap'
 import { useMemo } from 'react'
 

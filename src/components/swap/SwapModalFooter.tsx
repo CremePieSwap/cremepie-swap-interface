@@ -1,4 +1,4 @@
-import { Trade } from '@bscex/sdk'
+import { Trade } from '@cremepie/sdk'
 import React, { useMemo } from 'react'
 // import { Repeat } from 'react-feather'
 import { Text } from 'rebass'

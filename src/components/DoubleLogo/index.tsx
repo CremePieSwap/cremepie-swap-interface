@@ -1,4 +1,4 @@
-import { Currency } from '@bscex/sdk'
+import { Currency } from '@cremepie/sdk'
 import React from 'react'
 import styled from 'styled-components'
 import CurrencyLogo from '../CurrencyLogo'

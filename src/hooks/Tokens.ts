@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings'
-import { Currency, ETHER, Token, currencyEquals } from '@bscex/sdk'
+import { Currency, ETHER, Token, currencyEquals } from '@cremepie/sdk'
 import { useMemo } from 'react'
 import { useSelectedTokenList } from '../state/lists/hooks'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'

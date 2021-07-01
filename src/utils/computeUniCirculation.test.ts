@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount } from '@bscex/sdk'
+import { ChainId, JSBI, Token, TokenAmount } from '@cremepie/sdk'
 import { BigNumber } from 'ethers'
 import { ZERO_ADDRESS } from '../constants'
 import { computeUniCirculation } from './computeUniCirculation'

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@bscex/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@cremepie/sdk'
 import React from 'react'
 import { Text } from 'rebass'
 import { ButtonPrimary } from '../../components/Button'

@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@bscex/sdk'
+import { Currency, ETHER, Token } from '@cremepie/sdk'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import ReactGA from 'react-ga'
 import { useTranslation } from 'react-i18next'

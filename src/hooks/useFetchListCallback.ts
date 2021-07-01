@@ -1,5 +1,5 @@
 import { nanoid } from '@reduxjs/toolkit'
-import { ChainId } from '@bscex/sdk'
+import { ChainId } from '@cremepie/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'

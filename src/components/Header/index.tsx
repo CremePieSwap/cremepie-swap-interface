@@ -1,4 +1,4 @@
-import { ChainId } from '@bscex/sdk'
+import { ChainId } from '@cremepie/sdk'
 import React from 'react'
 import { Text } from 'rebass'
 // import { NavLink } from 'react-router-dom'
@@ -381,7 +381,7 @@ export default function Header({
           <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
             {account && userEthBalance ? (
               <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
-                {userEthBalance?.toSignificant(4)} BNB
+                {userEthBalance?.toSignificant(4)} MATIC
               </BalanceText>
             ) : null}
             <Web3Status />

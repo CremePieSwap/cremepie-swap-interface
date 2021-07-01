@@ -1,4 +1,4 @@
-import { ChainId } from '@bscex/sdk'
+import { ChainId } from '@cremepie/sdk'
 import { createStore, Store } from 'redux'
 import { addPopup, ApplicationModal, removePopup, setOpenModal, updateBlockNumber } from './actions'
 import reducer, { ApplicationState } from './reducer'

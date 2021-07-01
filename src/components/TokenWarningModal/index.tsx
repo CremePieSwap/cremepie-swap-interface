@@ -1,4 +1,4 @@
-import { Token } from '@bscex/sdk'
+import { Token } from '@cremepie/sdk'
 import { transparentize } from 'polished'
 import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'

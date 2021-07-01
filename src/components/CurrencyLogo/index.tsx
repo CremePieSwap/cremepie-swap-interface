@@ -1,9 +1,9 @@
-import { Currency, ETHER, Token } from '@bscex/sdk'
+import { Currency, ETHER, Token } from '@cremepie/sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
 // import EthereumLogo from '../../assets/images/ethereum-logo.png'
-import BNBLogo from '../../assets/images/bnb.svg'
+import BNBLogo from '../../assets/images/matic.png'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'

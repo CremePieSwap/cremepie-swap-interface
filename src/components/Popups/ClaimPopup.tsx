@@ -1,4 +1,4 @@
-import { TokenAmount } from '@bscex/sdk'
+import { TokenAmount } from '@cremepie/sdk'
 import React, { useEffect } from 'react'
 import { X } from 'react-feather'
 import styled, { keyframes } from 'styled-components'

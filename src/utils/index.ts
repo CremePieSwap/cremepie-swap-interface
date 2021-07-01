@@ -3,9 +3,9 @@ import { getAddress } from '@ethersproject/address'
 import { AddressZero } from '@ethersproject/constants'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { BigNumber } from '@ethersproject/bignumber'
-import { abi as IUniswapV2Router02ABI } from '@bscex/periphery/build/UniswapV2Router02.json'
+import { abi as IUniswapV2Router02ABI } from '@cremepie/periphery/build/UniswapV2Router02.json'
 import { ROUTER_ADDRESS } from '../constants'
-import { ChainId, JSBI, Percent, Token, CurrencyAmount, Currency, ETHER } from '@bscex/sdk'
+import { ChainId, JSBI, Percent, Token, CurrencyAmount, Currency, ETHER } from '@cremepie/sdk'
 import { TokenAddressMap } from '../state/lists/hooks'
 
 // returns the checksummed address if the address is valid, otherwise returns false
@@ -23,8 +23,8 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   4: 'rinkeby.etherscan.io',
   5: 'goerli.etherscan.io',
   42: 'kovan.etherscan.io',
-  56: 'bscscan.com',
-  97: 'testnet.bscscan.com'
+  137: 'polygonscan.com',
+  80001: 'mumbai.polygonscan.com'
 }
 
 export function getEtherscanLink(

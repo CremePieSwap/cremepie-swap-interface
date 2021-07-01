@@ -1,4 +1,4 @@
-import { Currency, Percent, Price } from '@bscex/sdk'
+import { Currency, Percent, Price } from '@cremepie/sdk'
 import React, { useContext } from 'react'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
