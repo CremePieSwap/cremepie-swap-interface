@@ -124,7 +124,7 @@ export default function Menu({
           pathname.startsWith('/remove') ||
           pathname.startsWith('/create') ||
           pathname.startsWith('/find')
-        } onClick={() => set_show_menu()}
+        } onClick={() => isMobile && set_show_menu()}
       >
         <img className='active' src={Active} alt="active" />
         <img src={Pools} alt="pools" />
