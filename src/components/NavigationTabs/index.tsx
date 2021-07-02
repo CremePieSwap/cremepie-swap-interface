@@ -56,7 +56,7 @@ const StylePageSubtitle = styled.div`
   line-height: 40px;
   font-weight: 500;
   &.pool {
-    margin-bottom: 120px;
+    margin-bottom: 100px;
   }
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     line-height: 32px;

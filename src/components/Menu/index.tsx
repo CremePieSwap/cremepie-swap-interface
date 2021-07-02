@@ -15,15 +15,35 @@ import Pools from '../../assets/svg/pools_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
 
 const MenuFlyout = styled.div<{ isMobile: boolean, showMenu: boolean }>`
+  position: fixed;
+  padding-top: 80px;
+  top: 0px;
+  left: 0px;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-shrink: 0;
   background-color: ${({ theme }) => theme.bg1};
-  font-size: 1rem;
-  z-index: 2;
-  padding-top: 2rem;
-  transition: width 0.3s;
-  display: ${({ isMobile, showMenu }) => isMobile && !showMenu ? 'none' : 'block'};
-  width: ${({ isMobile, showMenu }) => showMenu ? '240px' : !isMobile && '56px'};
-  position: ${({ isMobile, showMenu }) => isMobile && showMenu ? 'absolute' : 'unset'};
-  height: ${({ isMobile, showMenu }) => isMobile && showMenu ? 'calc(100vh - 64px)' : 'auto'};
+  width: 0px;
+  height: 100%;
+  transition: padding-top 0.2s ease 0s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  border-right: 0px;
+  z-index: 11;
+  overflow: hidden;
+  transform: translate3d(0px, 0px, 0px);
+  white-space: nowrap;
+  display: block;
+  &.show {
+    display: block;
+    width: 240px;
+  }
+  &.minimize {
+    display: block;
+    width: 56px;
+  }
+  &.hide {
+    display: none;
+  }
 `
 
 const activeClassName = 'ACTIVE'

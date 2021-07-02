@@ -29,29 +29,22 @@ import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
 import { Dots } from '../swap/styleds'
 
 const HeaderFrame = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 120px;
-  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transition: top 0.2s ease 0s;
+  display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  flex-direction: row;
+  padding-right: 16px;
   width: 100%;
-  top: 0;
-  position: relative;
-  border-bottom: 2px solid rgba(133, 133, 133, 0.1);
   height: 64px;
-  z-index: 2;
   background: ${({ theme }) => theme.bg1};
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-    width: calc(100%);
-    position: relative;
-  `};
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    padding: 0;
-  `}
+  border-bottom: 2px solid rgba(133, 133, 133, 0.1);
+  z-index: 20;
+  transform: translate3d(0px, 0px, 0px);
 `
 
 const HeaderControls = styled.div`

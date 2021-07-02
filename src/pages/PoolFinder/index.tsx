@@ -142,7 +142,7 @@ export default function PoolFinder() {
         {currency0 && currency1 ? (
           pairState === PairState.EXISTS ? (
             hasPosition && pair ? (
-              <MinimalPositionCard pair={pair} border="1px solid #CED0D9" />
+              <MinimalPositionCard pair={pair} border="1px solid #CED0D9" showDetail={() => {}}/>
             ) : (
               <GreyCard style={{marginTop: 30}}>
                 <AutoColumn gap="sm" justify="center">

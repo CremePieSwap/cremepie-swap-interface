@@ -42,36 +42,25 @@ const AppWrapper = styled.div`
   overflow-x: hidden;
 `
 
-const HeaderWrapper = styled.div`
-  ${({ theme }) => theme.flexRowNoWrap}
-  width: 100%;
-  justify-content: space-between;
-`
-
 const PageWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: calc(100vh - 64px);
+  min-height: 100vh;
 `
 
-const BodyWrapper = styled.div`
+const BodyWrapper = styled.div<{ showMenu: boolean }>`
   background: ${({ theme }) => theme.bg2};
   display: flex;
   flex-direction: column;
-  width: calc(100vw-56px);
+  margin-left: ${({ showMenu }) => showMenu ? '240px' : !isMobile ? '56px' : '0'};
+  max-width: ${({ showMenu }) => isMobile ? '100vw' : showMenu ? 'calc(100vw - 240px)' : 'calc(100vw - 56px)'};
+  margin-top: 64px;
   padding-top: 50px;
   align-items: center;
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 10;
-
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 16px;
-    padding-top: 2rem;
-  `};
-
   z-index: 1;
 `
 
@@ -95,12 +84,10 @@ export default function App() {
       <Route component={DarkModeQueryParamReader} />
       <AppWrapper>
         {/* <URLWarning /> */}
-        <HeaderWrapper>
-          <Header set_show_menu = {() => setShowMenu(!showMenu)} showMenu={showMenu} />
-        </HeaderWrapper>
+        <Header set_show_menu = {() => setShowMenu(!showMenu)} showMenu={showMenu} />
         <PageWrapper>
           <Menu showMenu = {showMenu}/>
-          <BodyWrapper>
+          <BodyWrapper showMenu={showMenu}>
             <Popups />
             <Polling />
             <TopLevelModals />

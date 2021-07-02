@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Pair } from '@cremepie/sdk'
 import { Link } from 'react-router-dom'
@@ -98,6 +98,8 @@ export default function Pool() {
 
   const hasV1Liquidity = useUserHasLiquidityInAllTokens()
 
+  const [show_pool_detail, set_show_pool_detail] = useState(false)
+
   return (
     <>
       <AppBody>
@@ -128,7 +130,11 @@ export default function Pool() {
                 </ButtonSecondary>*/}
 
                 {allV2PairsWithLiquidity.map(v2Pair => (
-                  <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
+                  <FullPositionCard 
+                    key={v2Pair.liquidityToken.address} 
+                    pair={v2Pair} 
+                    showDetail={() => set_show_pool_detail(!show_pool_detail)}
+                  />
                 ))}
                 <Text textAlign="center" fontSize={12}>
                     {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
@@ -160,22 +166,25 @@ export default function Pool() {
                 </TYPE.body>
               </EmptyProposals>
             )}
-            <TitleRow style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }} padding={'0'}>
-              <ButtonRow>
-                <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to="/add/ETH">
-                  <Text fontWeight={500} fontSize={16}>
-                    Add Liquidity
-                  </Text>
-                </ResponsiveButtonPrimary>
-              </ButtonRow>
-            </TitleRow>
-            <TitleRow style={{display: 'flex', justifyContent: 'center' }} padding={'0'}>
-              <ButtonRow>
-                <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
-                  Create a pair
-                </ResponsiveButtonSecondary>
-              </ButtonRow>
-            </TitleRow>
+            {!show_pool_detail && 
+            <>
+              <TitleRow style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }} padding={'0'}>
+                <ButtonRow>
+                  <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to="/add/ETH">
+                    <Text fontWeight={500} fontSize={16}>
+                      Add Liquidity
+                    </Text>
+                  </ResponsiveButtonPrimary>
+                </ButtonRow>
+              </TitleRow>
+              <TitleRow style={{display: 'flex', justifyContent: 'center' }} padding={'0'}>
+                <ButtonRow>
+                  <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
+                    Create a pair
+                  </ResponsiveButtonSecondary>
+                </ButtonRow>
+              </TitleRow>
+            </>}
             <AutoColumn justify={'center'} gap="md">
             </AutoColumn>
           </AutoColumn>
