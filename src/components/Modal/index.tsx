@@ -65,6 +65,7 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, ...r
         css`
           width: 100vw;
           border-radius: 20px;
+          margin-top: 64px;
         `}
     `}
   }

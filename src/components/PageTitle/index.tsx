@@ -8,6 +8,7 @@ const StylePageTitle = styled.div`
   background-image: url(${HomeBackground});
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: contain;
   min-height: 250px;
   display: flex;
   justify-content: center;

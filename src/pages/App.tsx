@@ -53,7 +53,7 @@ const BodyWrapper = styled.div<{ showMenu: boolean }>`
   background: ${({ theme }) => theme.bg2};
   display: flex;
   flex-direction: column;
-  margin-left: ${({ showMenu }) => showMenu ? '240px' : !isMobile ? '56px' : '0'};
+  margin-left: ${({ showMenu }) => isMobile ? '0' : showMenu ? '240px' : '56px'};
   max-width: ${({ showMenu }) => isMobile ? '100vw' : showMenu ? 'calc(100vw - 240px)' : 'calc(100vw - 56px)'};
   margin-top: 64px;
   padding-top: 50px;
@@ -62,6 +62,10 @@ const BodyWrapper = styled.div<{ showMenu: boolean }>`
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 1;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding-left: 20px;
+    padding-right: 20px;
+  `};
 `
 
 const Marginer = styled.div`
@@ -86,7 +90,7 @@ export default function App() {
         {/* <URLWarning /> */}
         <Header set_show_menu = {() => setShowMenu(!showMenu)} showMenu={showMenu} />
         <PageWrapper>
-          <Menu showMenu = {showMenu}/>
+          <Menu showMenu = {showMenu} set_show_menu={() => setShowMenu(!showMenu)}/>
           <BodyWrapper showMenu={showMenu}>
             <Popups />
             <Polling />

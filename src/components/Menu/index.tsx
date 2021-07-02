@@ -84,11 +84,13 @@ const StyledNavLink = styled(NavLink).attrs({
   `
 
 interface MenuProps {
-  showMenu: boolean
+  showMenu: boolean,
+  set_show_menu: () => void,
 }
 
 export default function Menu({
-  showMenu
+  showMenu,
+  set_show_menu
 }: MenuProps) {
 
   const node = useRef<HTMLDivElement>()
@@ -103,12 +105,12 @@ export default function Menu({
       isMobile={isMobile}
       className={`${isMobile ? showMenu ? 'show mobile' : 'hide' : showMenu ? 'show' : 'minimize'}`}
     >
-      <StyledNavLink id={`home-nav-link`} to={'/home'}>
+      <StyledNavLink id={`home-nav-link`} to={'/home'} onClick={() => set_show_menu()}>
         <img className='active' src={Active} alt="active" />
         <img src={Home} alt="home" />
         Home
       </StyledNavLink>
-      <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
+      <StyledNavLink id={`swap-nav-link`} to={'/swap'} onClick={() => set_show_menu()}>
         <img className='active' src={Active} alt="active" />
         <img src={Trade} alt="trade" />
         Trade
@@ -122,7 +124,7 @@ export default function Menu({
           pathname.startsWith('/remove') ||
           pathname.startsWith('/create') ||
           pathname.startsWith('/find')
-        }
+        } onClick={() => set_show_menu()}
       >
         <img className='active' src={Active} alt="active" />
         <img src={Pools} alt="pools" />
