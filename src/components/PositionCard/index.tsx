@@ -44,9 +44,10 @@ const StyledPositionCard = styled(LightCard)<{ bgColor: any }>`
 `
 
 interface PositionCardProps {
-  pair: Pair
-  showUnwrapped?: boolean
-  border?: string
+  pair: Pair,
+  showUnwrapped?: boolean,
+  border?: string,
+  showDetail: () => void
 }
 
 export function MinimalPositionCard({ pair, showUnwrapped = false, border }: PositionCardProps) {
@@ -157,7 +158,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
   )
 }
 
-export default function FullPositionCard({ pair, border }: PositionCardProps) {
+export default function FullPositionCard({ pair, border, showDetail }: PositionCardProps) {
   const { account } = useActiveWeb3React()
 
   const currency0 = unwrappedToken(pair.token0)
@@ -187,6 +188,11 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
 
   const backgroundColor = useColor(pair?.token0)
 
+  const handle_show_more = () => {
+    setShowMore(!showMore)
+    showDetail()
+  }
+
   return (
     <StyledPositionCard border={border} bgColor={backgroundColor}>
       <CardNoise />
@@ -204,7 +210,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
               padding="6px 8px"
               borderRadius="12px"
               width="fit-content"
-              onClick={() => setShowMore(!showMore)}
+              onClick={() => handle_show_more()}
             >
               {showMore ? (
                 <>

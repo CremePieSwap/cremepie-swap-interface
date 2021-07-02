@@ -12,6 +12,12 @@ const Block = styled.div`
   border-radius: 15px;
   text-align: left;
   position: relative;
+  height: 100%;
+  margin-bottom: 30px;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    margin: 0 auto 30px;
+    width: 350px;
+  `};
 `
 const BlockTitle = styled.div`
   font-size: 30px;

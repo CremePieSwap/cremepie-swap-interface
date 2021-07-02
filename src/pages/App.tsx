@@ -6,7 +6,7 @@ import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsRepo
 import AddressClaimModal from '../components/claim/AddressClaimModal'
 import Header from '../components/Header'
 import Polling from '../components/Header/Polling'
-import URLWarning from '../components/Header/URLWarning'
+// import URLWarning from '../components/Header/URLWarning'
 import Menu from '../components/Menu'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
@@ -42,37 +42,30 @@ const AppWrapper = styled.div`
   overflow-x: hidden;
 `
 
-const HeaderWrapper = styled.div`
-  ${({ theme }) => theme.flexRowNoWrap}
-  width: 100%;
-  justify-content: space-between;
-`
-
 const PageWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: calc(100vh - 64px);
+  min-height: 100vh;
 `
 
-const BodyWrapper = styled.div`
+const BodyWrapper = styled.div<{ showMenu: boolean }>`
   background: ${({ theme }) => theme.bg2};
   display: flex;
   flex-direction: column;
-  width: calc(100vw-56px);
+  margin-left: ${({ showMenu }) => isMobile ? '0' : showMenu ? '240px' : '56px'};
+  max-width: ${({ showMenu }) => isMobile ? '100vw' : showMenu ? 'calc(100vw - 240px)' : 'calc(100vw - 56px)'};
+  margin-top: 64px;
   padding-top: 50px;
   align-items: center;
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 10;
-
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    padding: 16px;
-    padding-top: 2rem;
-  `};
-
   z-index: 1;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding-left: 20px;
+    padding-right: 20px;
+  `};
 `
 
 const Marginer = styled.div`
@@ -94,13 +87,11 @@ export default function App() {
       <Route component={GoogleAnalyticsReporter} />
       <Route component={DarkModeQueryParamReader} />
       <AppWrapper>
-        <URLWarning />
-        <HeaderWrapper>
-          <Header set_show_menu = {() => setShowMenu(!showMenu)} />
-        </HeaderWrapper>
+        {/* <URLWarning /> */}
+        <Header set_show_menu = {() => setShowMenu(!showMenu)} showMenu={showMenu} />
         <PageWrapper>
-          <Menu showMenu = {showMenu}/>
-          <BodyWrapper>
+          <Menu showMenu = {showMenu} set_show_menu={() => setShowMenu(!showMenu)}/>
+          <BodyWrapper showMenu={showMenu}>
             <Popups />
             <Polling />
             <TopLevelModals />

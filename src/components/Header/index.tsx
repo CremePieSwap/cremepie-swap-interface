@@ -8,7 +8,8 @@ import { Text } from 'rebass'
 import styled from 'styled-components'
 
 import Logo from '../../assets/svg/cremepie.svg'
-import MenuDark from '../../assets/svg/menu.svg'
+import MenuOpen from '../../assets/svg/menu_open.svg'
+import MenuClose from '../../assets/svg/menu_close.svg'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
@@ -28,29 +29,22 @@ import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
 import { Dots } from '../swap/styleds'
 
 const HeaderFrame = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 120px;
-  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transition: top 0.2s ease 0s;
+  display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  flex-direction: row;
+  padding-right: 16px;
   width: 100%;
-  top: 0;
-  position: relative;
-  border-bottom: 2px solid rgba(133, 133, 133, 0.1);
   height: 64px;
-  z-index: 2;
   background: ${({ theme }) => theme.bg1};
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-    width: calc(100%);
-    position: relative;
-  `};
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    padding: 0;
-  `}
+  border-bottom: 2px solid rgba(133, 133, 133, 0.1);
+  z-index: 20;
+  transform: translate3d(0px, 0px, 0px);
 `
 
 const HeaderControls = styled.div`
@@ -77,7 +71,7 @@ const HeaderControls = styled.div`
     left: calc(100vw - 300px);
   `};
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    left: calc(100vw - 160px);
+    left: calc(100vw - 170px);
   `};
 `
 
@@ -291,11 +285,13 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
 }
 
 interface HeaderProps {
-  set_show_menu: () => void
+  set_show_menu: () => void,
+  showMenu: boolean
 }
 
 export default function Header({
-  set_show_menu
+  set_show_menu,
+  showMenu
 }: HeaderProps) {
   const { account, chainId } = useActiveWeb3React()
   // const { t } = useTranslation()
@@ -351,7 +347,7 @@ export default function Header({
       <ClaimModal />
       <HeaderRow>
         <MenuIcon>
-          <img onClick={() => set_show_menu()} width={'25px'} src={MenuDark} alt="logo" />
+          <img onClick={() => set_show_menu()} width={'25px'} src={showMenu ? MenuOpen : MenuClose} alt="menu" />
         </MenuIcon>
         <Title href=".">
           <UniIcon>
