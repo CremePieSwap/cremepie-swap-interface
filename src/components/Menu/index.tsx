@@ -105,12 +105,12 @@ export default function Menu({
       isMobile={isMobile}
       className={`${isMobile ? showMenu ? 'show mobile' : 'hide' : showMenu ? 'show' : 'minimize'}`}
     >
-      <StyledNavLink id={`home-nav-link`} to={'/home'} onClick={() => set_show_menu()}>
+      <StyledNavLink id={`home-nav-link`} to={'/home'} onClick={() => isMobile && set_show_menu()}>
         <img className='active' src={Active} alt="active" />
         <img src={Home} alt="home" />
         Home
       </StyledNavLink>
-      <StyledNavLink id={`swap-nav-link`} to={'/swap'} onClick={() => set_show_menu()}>
+      <StyledNavLink id={`swap-nav-link`} to={'/swap'} onClick={() => isMobile && set_show_menu()}>
         <img className='active' src={Active} alt="active" />
         <img src={Trade} alt="trade" />
         Trade
