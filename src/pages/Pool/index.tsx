@@ -130,6 +130,16 @@ export default function Pool() {
                 {allV2PairsWithLiquidity.map(v2Pair => (
                   <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
                 ))}
+                <Text textAlign="center" fontSize={12}>
+                    {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
+                </Text>
+                <ResponsiveButtonSecondary 
+                    as={Link} 
+                    id="import-pool-link" 
+                    to={hasV1Liquidity ? '/migrate/v1' : '/find'}
+                  >
+                    {hasV1Liquidity ? 'Migrate now.' : 'Find Other LP tokens'}
+                </ResponsiveButtonSecondary>
               </>
             ) : (
               <EmptyProposals>
