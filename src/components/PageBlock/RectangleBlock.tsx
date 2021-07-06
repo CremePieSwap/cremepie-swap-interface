@@ -6,7 +6,7 @@ const Block = styled.div`
   width: 350px;
   padding: 20px 30px;
   box-shadow: 20.7171px 36.9949px 66.5908px rgba(23, 18, 43, 0.45);
-  backdrop-filter: blur(19.5311px);
+  backdrop-filter: blur(3px);
   border-radius: 15px;
   text-align: left;
   position: relative;
@@ -26,6 +26,12 @@ const Block = styled.div`
     margin-bottom: 30px;
     background: linear-gradient(247.99deg, rgba(73, 73, 73, 0.49) 0%, rgba(65, 65, 65, 0.78) 48.89%, rgba(62, 62, 62, 0.71) 98.46%);;
   }
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    width: 100%;
+    &.type-3, &.type-4, &.type-5 {
+      margin-bottom: 20px;
+    }
+  `};
 `
 const Subtitle = styled.div<{ color: string }>`
   font-size: 24px;
@@ -60,7 +66,11 @@ const Subtitle3 = styled.div`
 const ButtonRow = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 20px 100px 0;
+  padding: 20px 160px 0;
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 20px 0 0;
+    justify-content: space-between;
+  `};
 `
 const Button = styled.div`
   font-size: 14px;
@@ -69,11 +79,14 @@ const Button = styled.div`
   color: ${({ theme }) => theme.white};
   background: #E3507A;
   border-radius: 32px;
-  padding: 5px 30px;
+  padding: 5px 45px;
   cursor: pointer;
   &:hover {
     box-shadow: 3px 3px 5px rgba(138, 172, 172, 0.5), -3px -3px 5px rgba(255, 255, 255, 0.5);
   }
+  ${({ theme }) => theme.mediaWidth.upToSmall`
+    padding: 5px 40px;
+  `};
 `
 const Title4 = styled.div`
   font-size: 32px;

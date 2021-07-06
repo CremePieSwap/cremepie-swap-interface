@@ -7,6 +7,10 @@ const StylePageBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -30px;
+  // ${({ theme }) => theme.mediaWidth.upToSmall`
+  //   margin-top: 0;
+  // `};
 `
 
 const BlockContainer = styled.div`
@@ -21,8 +25,8 @@ const BlockRow = styled.div`
   justify-content: space-between;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     display: block;
-    width: 350px;
-    margin: 0 auto 30px;
+    width: 100%;
+    margin: 0 auto 20px;
   `};
 `
 
@@ -32,7 +36,8 @@ const RightBlock = styled.div`
   gap: 20px;
   margin-bottom: 30px;
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    gap: 30px;
+    gap: 20px;
+    margin-bottom: 20px;
   `};
 `
 
@@ -51,8 +56,8 @@ export default function PageBlock() {
             />
             <RectangleBlock 
               type={2}
-              titleColor="#DADADA" 
-              subtitleColor="#50E3C2"
+              titleColor="#50E3C2" 
+              subtitleColor="#DADADA"
             />
           </RightBlock>
         </BlockRow>

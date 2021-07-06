@@ -8,15 +8,15 @@ const Block = styled.div`
   padding: 20px 30px;
   background: linear-gradient(247.99deg, rgba(73, 73, 73, 0.49) 0%, rgba(65, 65, 65, 0.78) 48.89%, rgba(62, 62, 62, 0.71) 98.46%);
   box-shadow: 20.7171px 36.9949px 66.5908px rgba(23, 18, 43, 0.45);
-  backdrop-filter: blur(19.5311px);
+  backdrop-filter: blur(3px);
   border-radius: 15px;
   text-align: left;
   position: relative;
   height: 100%;
   margin-bottom: 30px;
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    margin: 0 auto 30px;
-    width: 350px;
+    margin: 0 auto 20px;
+    width: 100%;
   `};
 `
 const BlockTitle = styled.div`
