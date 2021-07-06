@@ -11,13 +11,14 @@ import { TYPE } from '../../theme'
 import { Text } from 'rebass'
 import Card from '../../components/Card'
 import { RowBetween, RowFixed } from '../../components/Row'
-import { ButtonPrimary, ButtonSecondary } from '../../components/Button'
+import { ButtonPrimary, ButtonSecondary, ButtonLight } from '../../components/Button'
 import { AutoColumn } from '../../components/Column'
 import AppBody from '../AppBody'
 
 import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
+import { useWalletModalToggle } from '../../state/application/hooks'
 import { Dots } from '../../components/swap/styleds'
 
 const TitleRow = styled(RowBetween)`
@@ -100,6 +101,10 @@ export default function Pool() {
 
   const [show_pool_detail, set_show_pool_detail] = useState(false)
 
+
+  // toggle wallet when disconnected
+  const toggleWalletModal = useWalletModalToggle()
+
   return (
     <>
       <AppBody>
@@ -108,9 +113,10 @@ export default function Pool() {
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             {!account ? (
               <Card padding="40px">
-                <TYPE.body color={theme.white} textAlign="center">
+                <TYPE.body color={theme.white} textAlign="center" marginBottom="1rem">
                   Connect to a wallet to view your liquidity.
                 </TYPE.body>
+                <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
               </Card>
             ) : v2IsLoading ? (
               <EmptyProposals>
@@ -166,7 +172,7 @@ export default function Pool() {
                 </TYPE.body>
               </EmptyProposals>
             )}
-            {!show_pool_detail && 
+            {!account || !show_pool_detail && 
             <>
               <TitleRow style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }} padding={'0'}>
                 <ButtonRow>

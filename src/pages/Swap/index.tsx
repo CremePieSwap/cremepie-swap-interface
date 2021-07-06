@@ -467,7 +467,7 @@ export default function Swap() {
                 </Text>
               </ButtonError>
             )}
-            {showWrap ? null : (
+            {!account || showWrap ? null : (
               <SwapDetails>
                 <Card padding={'0'}>
                   <AutoColumn gap="2px">
