@@ -80,7 +80,6 @@ const StyledNavLink = styled(NavLink).attrs({
           display: block;
           position: absolute;
           left: 0;
-          width: 18px;
         }
       }
     }
@@ -114,7 +113,6 @@ const StyledNavLink = styled(NavLink).attrs({
             display: block;
             position: absolute;
             left: 0;
-            width: 18px;
           }
         }
       }
@@ -127,6 +125,7 @@ const StyledNotNavLink = styled.div`
     text-decoration: none;
     font-weight: 600;
     color: ${({ theme }) => theme.text3};
+    position: relative;
     :hover {
       color: ${({ theme }) => theme.text2};
       background: #89DBC420;
@@ -136,21 +135,12 @@ const StyledNotNavLink = styled.div`
       width: 12px;
       margin-right: 1.25rem;
       margin-left: 0.5rem;
-      &.active {
-        display: none;
-        margin-left: 0;
-      }
     }
     
-    &.active {
-      > img {
-        &.active {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 18px;
-        }
-      }
+    .active {
+      position: absolute;
+      left: 0;
+      margin-left: 0;
     }
   `
 const StyledSubMenu = styled(NavLink).attrs({
@@ -207,6 +197,7 @@ export default function Menu({
   useOnClickOutside(node, open ? toggle : undefined)
   // const { t } = useTranslation()
   const [openTrade, setOpenTrade] = useState(false)
+  const [activeTrade, setActiveTrade] = useState(false)
 
   useEffect(() => {
     if (!showMenu) {
@@ -221,24 +212,29 @@ export default function Menu({
     }
   }
 
+  const handleSelectTrade = () => {
+    setActiveTrade(true)
+    if (isMobile) set_show_menu()
+  }
+
   return (
     <MenuFlyout ref={node as any}
       showMenu={showMenu}
       isMobile={isMobile}
       className={`${isMobile ? showMenu ? 'show mobile' : 'hide' : showMenu ? 'show' : 'minimize'}`}
     >
-      <StyledNavLink id={`home-nav-link`} to={'/home'} onClick={() => isMobile && set_show_menu()}>
+      <StyledNavLink id={`home-nav-link`} to={'/home'} onClick={() => {isMobile && set_show_menu(); setActiveTrade(false);}}>
         <img className='active' src={Active} alt="active" />
         <img src={Home} alt="home" />
         Home
       </StyledNavLink>
       <StyledNotNavLink onClick={handleOpenTrade}>
-        {openTrade && <img className='active' src={Active} alt="active" />}
+        {activeTrade && <img className='active' src={Active} alt="active" />}
         <img src={Trade} alt="trade" />
         Trade
       </StyledNotNavLink>
       {openTrade && <>
-      <StyledSubMenu id={`swap-nav-link`} to={'/swap'} onClick={() => isMobile && set_show_menu()}>
+      <StyledSubMenu id={`swap-nav-link`} to={'/swap'} onClick={handleSelectTrade}>
         Exchange
       </StyledSubMenu>
       <StyledSubMenu
@@ -250,7 +246,7 @@ export default function Menu({
           pathname.startsWith('/remove') ||
           pathname.startsWith('/create') ||
           pathname.startsWith('/find')
-        } onClick={() => isMobile && set_show_menu()}
+        } onClick={handleSelectTrade}
       >
         Liquidity
       </StyledSubMenu>
