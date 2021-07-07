@@ -24,11 +24,10 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   align-items: center;
   height: 2.2rem;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   background-color: inherit;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.text1};
   border-radius: 12px;
-  box-shadow: ${({ selected }) => (selected ? 'none' : '0px 6px 10px rgba(0, 0, 0, 0.075)')};
   outline: none;
   cursor: pointer;
   user-select: none;
@@ -42,7 +41,7 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
 const LabelRow = styled.div`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.text1};
   font-size: 0.75rem;
   line-height: 1rem;
   padding: 0.5rem 1rem 0 1rem;
@@ -63,7 +62,7 @@ const StyledDropDown = styled(DropDown)<{ selected: boolean }>`
   height: 35%;
 
   path {
-    stroke: ${({ selected, theme }) => (selected ? theme.text1 : theme.white)};
+    stroke: ${({ selected, theme }) => (selected ? theme.text1 : theme.text1)};
     stroke-width: 1.5px;
   }
 `
@@ -83,7 +82,7 @@ const Container = styled.div<{ hideInput: boolean }>`
 
 const StyledTokenName = styled.span<{ active?: boolean }>`
   ${({ active }) => (active ? '  margin: 0 0.25rem 0 0.75rem;' : '  margin: 0 0.25rem 0 0.25rem;')}
-  font-size:  ${({ active }) => (active ? '20px' : '16px')};
+  font-size:  ${({ active }) => (active ? '14px' : '14px')};
 `
 
 const StyledBalanceMax = styled.button`
@@ -159,13 +158,13 @@ export default function CurrencyInputPanel({
         {!hideInput && (
           <LabelRow>
             <RowBetween>
-              <TYPE.body color={theme.white} fontWeight={600} fontSize={12}>
+              <TYPE.body color={theme.text1} fontWeight={600} fontSize={12}>
                 {label}
               </TYPE.body>
               {account && (
                 <TYPE.body
                   onClick={onMax}
-                  color={theme.white}
+                  color={theme.text1}
                   fontWeight={600}
                   fontSize={12}
                   style={{ display: 'inline', cursor: 'pointer' }}

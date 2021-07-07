@@ -51,13 +51,13 @@ export default function PageBlock() {
           <RightBlock>
             <RectangleBlock 
               type={1}
-              titleColor="#DADADA" 
-              subtitleColor="#50E3C2"
+              titleColor="#FFFFFF" 
+              subtitleColor="#5B5A99"
             />
             <RectangleBlock 
               type={2}
               titleColor="#50E3C2" 
-              subtitleColor="#DADADA"
+              subtitleColor="#F397B7"
             />
           </RightBlock>
         </BlockRow>
@@ -71,7 +71,7 @@ export default function PageBlock() {
         <BlockRow>
           <RectangleBlock 
             type={4}
-            titleColor="#DADADA" 
+            titleColor="#A9A9A9" 
             subtitleColor="#50E3C2"
           />
           <RectangleBlock 

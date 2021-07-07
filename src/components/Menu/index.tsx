@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 // import { useTranslation } from 'react-i18next'
@@ -12,6 +12,7 @@ import { isMobile } from 'react-device-detect'
 import Home from '../../assets/svg/home_icon.svg'
 import Trade from '../../assets/svg/trade_icon.svg'
 import Pools from '../../assets/svg/pools_icon.svg'
+import Farm from '../../assets/svg/farm_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
 
 const MenuFlyout = styled.div<{ isMobile: boolean, showMenu: boolean }>`
@@ -57,17 +58,124 @@ const StyledNavLink = styled(NavLink).attrs({
     overflow: hidden;
     text-decoration: none;
     font-weight: 600;
-    color: ${({ theme }) => theme.text1};
+    color: ${({ theme }) => theme.text3};
     :hover {
       color: ${({ theme }) => theme.text2};
       background: #89DBC420;
       cursor: pointer;
     }
     > img {
-      width: 25px;
-      margin-right: 1rem;
+      width: 12px;
+      margin-right: 1.25rem;
+      margin-left: 0.5rem;
       &.active {
         display: none;
+        margin-left: 0;
+      }
+    }
+    
+    &.${activeClassName} {
+      > img {
+        &.active {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 18px;
+        }
+      }
+    }
+  `
+  const StyledAbsoluteLink = styled.a`
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      overflow: hidden;
+      text-decoration: none;
+      font-weight: 600;
+      color: ${({ theme }) => theme.text3};
+      :hover {
+        color: ${({ theme }) => theme.text2};
+        background: #89DBC420;
+        cursor: pointer;
+      }
+      > img {
+        width: 12px;
+        margin-right: 1.25rem;
+        margin-left: 0.5rem;
+        &.active {
+          display: none;
+          margin-left: 0;
+        }
+      }
+      
+      &.${activeClassName} {
+        > img {
+          &.active {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 18px;
+          }
+        }
+      }
+    `
+const StyledNotNavLink = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    color: ${({ theme }) => theme.text3};
+    :hover {
+      color: ${({ theme }) => theme.text2};
+      background: #89DBC420;
+      cursor: pointer;
+    }
+    > img {
+      width: 12px;
+      margin-right: 1.25rem;
+      margin-left: 0.5rem;
+      &.active {
+        display: none;
+        margin-left: 0;
+      }
+    }
+    
+    &.active {
+      > img {
+        &.active {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 18px;
+        }
+      }
+    }
+  `
+const StyledSubMenu = styled(NavLink).attrs({
+  activeClassName
+})`
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 56px;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 400;
+    color: ${({ theme }) => theme.text3};
+    :hover {
+      color: ${({ theme }) => theme.text2};
+      background: #89DBC420;
+      cursor: pointer;
+    }
+    > img {
+      width: 12px;
+      margin-right: 1.25rem;
+      margin-left: 0.5rem;
+      &.active {
+        display: none;
+        margin-left: 0;
       }
     }
     
@@ -98,6 +206,20 @@ export default function Menu({
   const toggle = useToggleModal(ApplicationModal.MENU)
   useOnClickOutside(node, open ? toggle : undefined)
   // const { t } = useTranslation()
+  const [openTrade, setOpenTrade] = useState(false)
+
+  useEffect(() => {
+    if (!showMenu) {
+      setOpenTrade(false)
+    }
+  }, [showMenu])
+
+  const handleOpenTrade = () => {
+    setOpenTrade(!openTrade)
+    if (!showMenu) {
+      set_show_menu()
+    }
+  }
 
   return (
     <MenuFlyout ref={node as any}
@@ -110,12 +232,16 @@ export default function Menu({
         <img src={Home} alt="home" />
         Home
       </StyledNavLink>
-      <StyledNavLink id={`swap-nav-link`} to={'/swap'} onClick={() => isMobile && set_show_menu()}>
-        <img className='active' src={Active} alt="active" />
+      <StyledNotNavLink onClick={handleOpenTrade}>
+        {openTrade && <img className='active' src={Active} alt="active" />}
         <img src={Trade} alt="trade" />
         Trade
-      </StyledNavLink>
-      <StyledNavLink
+      </StyledNotNavLink>
+      {openTrade && <>
+      <StyledSubMenu id={`swap-nav-link`} to={'/swap'} onClick={() => isMobile && set_show_menu()}>
+        Exchange
+      </StyledSubMenu>
+      <StyledSubMenu
         id={`pool-nav-link`}
         to={'/pool'}
         isActive={(match, { pathname }) =>
@@ -126,11 +252,21 @@ export default function Menu({
           pathname.startsWith('/find')
         } onClick={() => isMobile && set_show_menu()}
       >
-        <img className='active' src={Active} alt="active" />
+        Liquidity
+      </StyledSubMenu>
+      </>}
+      <StyledAbsoluteLink
+        href="https://swap.bscex.org/#/swap"
+      >
+        <img src={Farm} alt="farm" />
+        Farm
+      </StyledAbsoluteLink>
+      <StyledAbsoluteLink
+        href="https://swap.bscex.org/#/swap"
+      >
         <img src={Pools} alt="pools" />
-        {/* {t('pool')} */}
-        Pool
-      </StyledNavLink>
+        Pools
+      </StyledAbsoluteLink>
     </MenuFlyout>
   )
 }

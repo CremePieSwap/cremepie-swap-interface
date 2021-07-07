@@ -52,7 +52,7 @@ import styled from 'styled-components'
 
 const SwapDetails = styled.div`
   margin: 1rem 2rem;
-  background: rgba(91, 90, 153, 0.75);
+  background: ${({ theme }) => theme.bg2};
   border-radius: 20px;
   padding: 0.5rem 1rem;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -389,7 +389,7 @@ export default function Swap() {
                   (wrapType === WrapType.WRAP ? 'Wrap' : wrapType === WrapType.UNWRAP ? 'Unwrap' : null)}
               </ButtonPrimary>
             ) : noRoute && userHasSpecifiedInputOutput ? (
-              <ButtonError style={{ textAlign: 'center' }} disabled={true}>
+              <ButtonError style={{ textAlign: 'center' }} disabled={true} error={true}>
                 <Text>Insufficient liquidity for this trade.</Text>
               </ButtonError>
             ) : showApproveFlow ? (
@@ -473,7 +473,7 @@ export default function Swap() {
                   <AutoColumn gap="2px">
                     {Boolean(trade) && (
                       <RowBetween align="center">
-                        <Text fontWeight={400} fontSize={12} color={theme.text2}>
+                        <Text fontWeight={400} fontSize={12} color={theme.text1}>
                           Price
                         </Text>
                         <TradePrice
@@ -484,16 +484,16 @@ export default function Swap() {
                       </RowBetween>
                     )}
                     <RowBetween align="center">
-                      <ClickableText fontWeight={400} fontSize={12} color={theme.text2} onClick={toggleSettings}>
+                      <ClickableText fontWeight={400} fontSize={12} color={theme.text1} onClick={toggleSettings}>
                         Slippage Tolerance
                       </ClickableText>
-                      <ClickableText fontWeight={400} fontSize={12} color={theme.text2} onClick={toggleSettings}>
+                      <ClickableText fontWeight={400} fontSize={12} color={theme.text1} onClick={toggleSettings}>
                         {allowedSlippage / 100}%
                       </ClickableText>
                     </RowBetween>
                     <RowBetween>
                       <RowFixed>
-                        <TYPE.black fontSize={12} fontWeight={400} color={theme.text2}>
+                        <TYPE.black fontSize={12} fontWeight={400} color={theme.text1}>
                           {trade?.tradeType === TradeType.EXACT_INPUT ? 'Minimum received' : 'Maximum sold'}
                         </TYPE.black>
                         {/* <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." /> */}
@@ -513,7 +513,7 @@ export default function Swap() {
                     </RowBetween>
                     <RowBetween>
                       <RowFixed>
-                        <TYPE.black color={theme.text2} fontSize={12} fontWeight={400}>
+                        <TYPE.black color={theme.text1} fontSize={12} fontWeight={400}>
                           Price Impact
                         </TYPE.black>
                         {/* <QuestionHelper text="The difference between the market price and your price due to trade size." /> */}
@@ -522,7 +522,7 @@ export default function Swap() {
                     </RowBetween>
                     <RowBetween>
                       <RowFixed>
-                        <TYPE.black fontSize={12} fontWeight={400} color={theme.text2}>
+                        <TYPE.black fontSize={12} fontWeight={400} color={theme.text1}>
                           Liquidity Provider Fee
                         </TYPE.black>
                         {/* <QuestionHelper text="A portion of each trade (0.20%) goes to liquidity providers as a protocol incentive." /> */}

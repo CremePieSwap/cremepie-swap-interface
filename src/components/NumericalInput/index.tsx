@@ -6,12 +6,12 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
   color: ${({ error, theme }) => (error ? theme.red1 : theme.text1)};
   width: 0;
   position: relative;
-  font-weight: 500;
+  font-weight: 600;
   outline: none;
   border: none;
   flex: 1 1 auto;
   background-color: inherit;
-  font-size: ${({ fontSize }) => fontSize ?? '24px'};
+  font-size: ${({ fontSize }) => fontSize ?? '18px'};
   text-align: ${({ align }) => align && align};
   white-space: nowrap;
   overflow: hidden;
@@ -33,7 +33,7 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
   }
 
   ::placeholder {
-    color: ${({ theme }) => theme.text4};
+    color: ${({ theme }) => theme.text1};
   }
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     font-size: 20px;

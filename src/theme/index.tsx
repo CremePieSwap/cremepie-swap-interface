@@ -53,16 +53,16 @@ export function colors(darkMode: boolean): Colors {
     black,
 
     // text
-    text1: darkMode ? '#FAE8BA' : '#000000', // Main text
+    text1: darkMode ? '#5B5A99' : '#000000', // Main text
     text2: darkMode ? '#50E3C2' : '#565A69', // Green
-    text3: darkMode ? '#5B5A99' : '#888D9B', //Purple
+    text3: darkMode ? '#6EA3AA' : '#888D9B', //Purple
     text4: darkMode ? '#FFFFFF' : '#C3C5CB',
     text5: darkMode ? '#2C2F36' : '#EDEEF2',
 
     // backgrounds / greys
-    bg1: darkMode ? '#323232' : '#FFFFFF',
-    bg2: darkMode ? '#232323' : '#F7F8FA',
-    bg3: darkMode ? '#3B3B62' : '#EDEEF2', //Purple
+    bg1: darkMode ? '#FFFFFF' : '#FFFFFF',
+    bg2: darkMode ? '#F5F5FA' : '#F7F8FA',
+    bg3: darkMode ? '#F5F5FA' : '#EDEEF2', //Purple
     bg4: darkMode ? '#50E3C2' : '#CED0D9', // Green
     bg5: darkMode ? '#6C7284' : '#888D9B',
 

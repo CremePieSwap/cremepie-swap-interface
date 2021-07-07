@@ -34,6 +34,7 @@ import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, Redirec
 
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
+import main_bg from '../assets/svg/main_bg.svg'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -50,7 +51,8 @@ const PageWrapper = styled.div`
 `
 
 const BodyWrapper = styled.div<{ showMenu: boolean }>`
-  background: ${({ theme }) => theme.bg2};
+  background: url(${main_bg}) no-repeat;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   margin-left: ${({ showMenu }) => isMobile ? '0' : showMenu ? '240px' : '56px'};

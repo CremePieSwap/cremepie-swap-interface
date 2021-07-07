@@ -21,7 +21,7 @@ const Base = styled(RebassButton)<{
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   outline: none;
   border: 1px solid transparent;
-  color: ${({ theme }) => theme.text3};
+  color: ${({ theme }) => theme.text1};
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -45,20 +45,20 @@ const Base = styled(RebassButton)<{
 export const ButtonPrimary = styled(Base)`
   background-color: ${({ theme }) => theme.bg4};
   &:focus {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
     background-color: ${({ theme }) => darken(0.05, theme.bg4)};
   }
   &:hover {
     background-color: ${({ theme }) => darken(0.05, theme.bg4)};
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   }
   &:active {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
     background-color: ${({ theme }) => darken(0.1, theme.bg4)};
   }
   &:disabled {
     background-color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.bg4 : theme.bg3)};
-    color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.text3)};
+    color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.text1 : theme.text1)};
     cursor: auto;
     box-shadow: none;
     border: 1px solid transparent;
@@ -72,13 +72,13 @@ export const ButtonLight = styled(Base)`
   background-color: ${({ theme }) => theme.bg4};
   color: ${({ theme }) => theme.text3};
   &:focus {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   }
   &:hover {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   }
   &:active {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   }
   :disabled {
     opacity: 0.4;
@@ -117,10 +117,10 @@ export const ButtonSecondary = styled(Base)`
   &:focus {
   }
   &:hover {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   }
   &:active {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px #676C9B;
+    box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   }
   &:disabled {
     opacity: 50%;

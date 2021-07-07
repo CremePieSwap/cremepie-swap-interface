@@ -28,14 +28,14 @@ const activeClassName = 'ACTIVE'
 const StyledNavLink = styled(NavLink).attrs({
   activeClassName
 })`
-  color: ${({ theme }) => theme.text3};
+  color: ${({ theme }) => theme.text1};
   border-radius: 43px;
   padding: 5px 20px;
   font-size: 14px;
   font-weight: 900;
   text-decoration: none;
   &.${activeClassName} {
-    background: ${({ theme }) => theme.text3};
+    background: ${({ theme }) => theme.text1};
     color: #fff;
   }
 `
@@ -44,19 +44,19 @@ const StyledArrowLeft = styled(ArrowLeft)`
   color: ${({ theme }) => theme.text1};
 `
 const StylePageTitle = styled.div`
-  color: ${({ theme }) => theme.text3};
+  color: ${({ theme }) => theme.text1};
   font-size: 32px;
   line-height: 40px;
   font-weight: 900;
 `
 
 const StylePageSubtitle = styled.div`
-  color: ${({ theme }) => theme.text3};
+  color: ${({ theme }) => theme.text1};
   font-size: 14px;
   line-height: 40px;
   font-weight: 500;
   &.pool {
-    margin-bottom: 100px;
+    margin-bottom: 120px;
   }
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     line-height: 32px;

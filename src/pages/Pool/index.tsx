@@ -61,7 +61,7 @@ const EmptyProposals = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #3B3B62;
+  background: ${({ theme }) => theme.bg2};
 `
 
 export default function Pool() {
@@ -113,7 +113,7 @@ export default function Pool() {
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             {!account ? (
               <Card padding="40px">
-                <TYPE.body color={theme.white} textAlign="center" marginBottom="1rem">
+                <TYPE.body color={theme.text1} textAlign="center" marginBottom="1rem">
                   Connect to a wallet to view your liquidity.
                 </TYPE.body>
                 <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
@@ -155,10 +155,10 @@ export default function Pool() {
               </>
             ) : (
               <EmptyProposals>
-                <TYPE.body fontSize={12} color={theme.white} textAlign="center" style={{marginBottom: 10}}>
+                <TYPE.body fontSize={12} color={theme.text1} textAlign="center" style={{marginBottom: 10}}>
                   No liquidity found.
                 </TYPE.body>
-                <TYPE.body color={theme.white} textAlign="center">
+                <TYPE.body color={theme.text1} textAlign="center">
                   <Text textAlign="center" fontSize={12} style={{ padding: '.5rem 0 .5rem 0', marginBottom: 5 }}>
                     {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
                   </Text>

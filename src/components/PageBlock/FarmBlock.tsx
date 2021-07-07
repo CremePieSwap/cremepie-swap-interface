@@ -6,8 +6,8 @@ import BgPie from '../../assets/svg/background_pie.svg'
 const Block = styled.div`
   width: 350px;
   padding: 20px 30px;
-  background: linear-gradient(247.99deg, rgba(73, 73, 73, 0.49) 0%, rgba(65, 65, 65, 0.78) 48.89%, rgba(62, 62, 62, 0.71) 98.46%);
-  box-shadow: 20.7171px 36.9949px 66.5908px rgba(23, 18, 43, 0.45);
+  background: #FFFFFF;
+  box-shadow: 1px 1px 1px rgba(23, 18, 43, 0.1);
   backdrop-filter: blur(3px);
   border-radius: 15px;
   text-align: left;
@@ -49,10 +49,10 @@ const BlockButton = styled.div`
   line-height: 24px;
   text-align: center;
   font-weight: 600;
-  color: ${({ theme }) => theme.text3};
+  color: ${({ theme }) => theme.text1};
   height: 24px;
   background-color: ${({ theme }) => theme.text2};
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px #4F4F4F;
+  box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   border-radius: 32px;
   cursor: pointer;
 `
