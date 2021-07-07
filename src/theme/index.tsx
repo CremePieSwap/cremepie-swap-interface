@@ -189,12 +189,12 @@ export const TYPE = {
 
 export const FixedGlobalStyle = createGlobalStyle`
 html, input, textarea, button {
-  font-family: '${SFPro400}', sans-serif;
+  font-family: SF-900, sans-serif;
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {
   html, input, textarea, button {
-    font-family: '${SFPro400}', sans-serif;
+    font-family: SF-900, sans-serif;
   }
 }
 

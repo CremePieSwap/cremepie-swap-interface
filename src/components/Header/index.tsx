@@ -193,6 +193,7 @@ const Title = styled.a`
 
 const UniIcon = styled.div`
   transition: transform 0.3s ease;
+  height: 32px;
 `
 
 // const activeClassName = 'ACTIVE'
@@ -253,11 +254,12 @@ const UniIcon = styled.div`
 const MenuIcon = styled.div`
   transition: transform 0.3s ease;
   cursor: pointer;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   background: transparent;
   width: 56px;
-  text-align: center;
 `
 
 const WrapLinkDesktop = styled.div`

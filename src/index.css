@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'SF-400';
+  src: url('./assets/fonts/SF-Pro-Rounded-Thin.otf') format('truetype')
+}
+@font-face {
+  font-family: 'SF-500';
+  src: url('./assets/fonts/SF-Pro-Rounded-Medium.otf') format('truetype')
+}
+@font-face {
+  font-family: 'SF-900';
+  src: url('./assets/fonts/SF-Pro-Rounded-Bold.otf') format('truetype')
+}
+
+body {
+  font-family: 'SF-500', sans-serif;
+  color: #FAE8BA;
+}
