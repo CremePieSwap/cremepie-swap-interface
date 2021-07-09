@@ -7,7 +7,7 @@ import { ArrowLeft } from 'react-feather'
 import { RowBetween } from '../Row'
 import Settings from '../Settings'
 import QuestionHelper from '../QuestionHelper'
-import SwapIcon2 from '../../assets/svg/swap_icon_2.svg'
+// import SwapIcon2 from '../../assets/svg/swap_icon_2.svg'
 
 const Tabs = styled.div`
   width: 180px;
@@ -85,9 +85,9 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
       <StylePageTitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Exchange' : 'Your Liquidity'}</StylePageTitle>
       <StylePageSubtitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Trade tokens in an instant' : 'Remove liquidity to receive tokens back'}</StylePageSubtitle>
       {active === 'swap' && 
-        <StyleButtons style={{marginBottom: 90, display: 'flex', justifyContent: 'center'}}>
+        <StyleButtons style={{marginBottom: 120, display: 'flex', justifyContent: 'center'}}>
           <Settings />
-          <img src={SwapIcon2} alt="" />
+          {/* <img src={SwapIcon2} alt="" /> */}
         </StyleButtons>
       }
     </div>
