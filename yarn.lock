@@ -1165,10 +1165,10 @@
     "@cremepie/core" "1.0.5"
     "@cremepie/lib" "1.0.0"
 
-"@cremepie/sdk@1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@cremepie/sdk/-/sdk-1.0.9.tgz#91fdc378c1989812c291addcdbcb7877437ac8e2"
-  integrity sha512-ctnO8aYdVFVRH9TqLdaZbcrxtvkv5+kKClARzLEJOEtOQ5/v1uHCD3+LjeVT5f/t55OdkGGi+P2FwXEjQ91DfQ==
+"@cremepie/sdk@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@cremepie/sdk/-/sdk-1.1.1.tgz#7acf4e4abbdc39b70fc8fef54802d8472c33e637"
+  integrity sha512-YiMTlc7SyOkxa8V4PNCBXForz5OtulZpqQG1VTlfNxABPB5BtmCTY7SD9Fw2RWBaVy8JwesfZy4MvAOwiYJ3SA==
   dependencies:
     "@bscex/core" "1.0.5"
     "@cremepie/core" "1.0.5"
