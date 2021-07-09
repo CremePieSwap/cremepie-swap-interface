@@ -11,7 +11,7 @@ import Column, { AutoColumn } from '../../components/Column'
 import ConfirmSwapModal from '../../components/swap/ConfirmSwapModal'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import { SwapPoolTabs } from '../../components/NavigationTabs'
-import { AutoRow, RowBetween, RowFixed} from '../../components/Row'
+import { AutoRow, RowBetween, RowFixed } from '../../components/Row'
 // import QuestionHelper from '../../components/QuestionHelper'
 import AdvancedSwapDetailsDropdown from '../../components/swap/AdvancedSwapDetailsDropdown'
 import BetterTradeLink, { DefaultVersionLink } from '../../components/swap/BetterTradeLink'
@@ -49,17 +49,6 @@ import Loader from '../../components/Loader'
 // import { getRouterContract } from '../../utils'
 
 import styled from 'styled-components'
-
-const SwapDetails = styled.div`
-  margin: 1rem 2rem;
-  background: ${({ theme }) => theme.bg2};
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    margin-top: 0.5rem;
-  `}
-`
-
 
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -324,7 +313,7 @@ export default function Swap() {
             onDismiss={handleConfirmDismiss}
           />
 
-          <AutoColumn gap={'md'}>
+          <AutoColumn gap={'lg'}>
             <CurrencyInputPanel
               label={independentField === Field.OUTPUT && !showWrap && trade ? 'From (estimated)' : 'From'}
               value={formattedAmounts[Field.INPUT]}
@@ -467,74 +456,6 @@ export default function Swap() {
                 </Text>
               </ButtonError>
             )}
-            {!account || showWrap ? null : (
-              <SwapDetails>
-                <Card padding={'0'}>
-                  <AutoColumn gap="2px">
-                    {Boolean(trade) && (
-                      <RowBetween align="center">
-                        <Text fontWeight={400} fontSize={12} color={theme.text1}>
-                          Price
-                        </Text>
-                        <TradePrice
-                          price={trade?.executionPrice}
-                          showInverted={showInverted}
-                          setShowInverted={setShowInverted}
-                        />
-                      </RowBetween>
-                    )}
-                    <RowBetween align="center">
-                      <ClickableText fontWeight={400} fontSize={12} color={theme.text1} onClick={toggleSettings}>
-                        Slippage Tolerance
-                      </ClickableText>
-                      <ClickableText fontWeight={400} fontSize={12} color={theme.text1} onClick={toggleSettings}>
-                        {allowedSlippage / 100}%
-                      </ClickableText>
-                    </RowBetween>
-                    <RowBetween>
-                      <RowFixed>
-                        <TYPE.black fontSize={12} fontWeight={400} color={theme.text1}>
-                          {trade?.tradeType === TradeType.EXACT_INPUT ? 'Minimum received' : 'Maximum sold'}
-                        </TYPE.black>
-                        {/* <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." /> */}
-                      </RowFixed>
-                      <RowFixed>
-                        <TYPE.black fontSize={12}>
-                          {trade?.tradeType === TradeType.EXACT_INPUT
-                            ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)
-                            : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)}
-                        </TYPE.black>
-                        <TYPE.black fontSize={12} marginLeft={'4px'}>
-                          {trade?.tradeType === TradeType.EXACT_INPUT
-                            ? trade?.outputAmount.currency.symbol ?? '-'
-                            : trade?.inputAmount.currency.symbol ?? '-'}
-                        </TYPE.black>
-                      </RowFixed>
-                    </RowBetween>
-                    <RowBetween>
-                      <RowFixed>
-                        <TYPE.black color={theme.text1} fontSize={12} fontWeight={400}>
-                          Price Impact
-                        </TYPE.black>
-                        {/* <QuestionHelper text="The difference between the market price and your price due to trade size." /> */}
-                      </RowFixed>
-                      <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
-                    </RowBetween>
-                    <RowBetween>
-                      <RowFixed>
-                        <TYPE.black fontSize={12} fontWeight={400} color={theme.text1}>
-                          Liquidity Provider Fee
-                        </TYPE.black>
-                        {/* <QuestionHelper text="A portion of each trade (0.20%) goes to liquidity providers as a protocol incentive." /> */}
-                      </RowFixed>
-                      <TYPE.black fontSize={12}>
-                        {realizedLPFee ? realizedLPFee?.toSignificant(6) + ' ' + trade?.inputAmount.currency.symbol : '-'}
-                      </TYPE.black>
-                    </RowBetween>
-                  </AutoColumn>
-                </Card>
-              </SwapDetails>
-            )}
             {showApproveFlow && (
               <Column style={{ marginTop: '1rem' }}>
                 <ProgressSteps steps={[approval === ApprovalState.APPROVED]} />
@@ -549,7 +470,83 @@ export default function Swap() {
           </BottomGrouping>
         </Wrapper>
       </AppBody>
+      {!account || showWrap ? null : (
+        <SwapDetails>
+          <Card padding={'0'}>
+            <AutoColumn gap="sm">
+              {Boolean(trade) && (
+                <RowBetween align="center">
+                  <Text fontWeight={400} fontSize={14} color={theme.text1}>
+                    Price
+                  </Text>
+                  <TradePrice
+                    price={trade?.executionPrice}
+                    showInverted={showInverted}
+                    setShowInverted={setShowInverted}
+                  />
+                </RowBetween>
+              )}
+              <RowBetween align="center">
+                <ClickableText fontWeight={400} fontSize={14} color={theme.text1} onClick={toggleSettings}>
+                  Slippage Tolerance
+                </ClickableText>
+                <ClickableText fontWeight={400} fontSize={14} color={theme.text1} onClick={toggleSettings}>
+                  {allowedSlippage / 100}%
+                </ClickableText>
+              </RowBetween>
+              <RowBetween>
+                <RowFixed>
+                  <TYPE.black fontSize={14} fontWeight={400} color={theme.text1}>
+                    {trade?.tradeType === TradeType.EXACT_INPUT ? 'Minimum received' : 'Maximum sold'}
+                  </TYPE.black>
+                  {/* <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." /> */}
+                </RowFixed>
+                <RowFixed>
+                  <TYPE.black fontSize={14}>
+                    {trade?.tradeType === TradeType.EXACT_INPUT
+                      ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)
+                      : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)}
+                  </TYPE.black>
+                  <TYPE.black fontSize={14} marginLeft={'4px'}>
+                    {trade?.tradeType === TradeType.EXACT_INPUT
+                      ? trade?.outputAmount.currency.symbol ?? '-'
+                      : trade?.inputAmount.currency.symbol ?? '-'}
+                  </TYPE.black>
+                </RowFixed>
+              </RowBetween>
+              <RowBetween>
+                <RowFixed>
+                  <TYPE.black color={theme.text1} fontSize={14} fontWeight={400}>
+                    Price Impact
+                  </TYPE.black>
+                  {/* <QuestionHelper text="The difference between the market price and your price due to trade size." /> */}
+                </RowFixed>
+                <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
+              </RowBetween>
+              <RowBetween>
+                <RowFixed>
+                  <TYPE.black fontSize={14} fontWeight={400} color={theme.text1}>
+                    Liquidity Provider Fee
+                  </TYPE.black>
+                  {/* <QuestionHelper text="A portion of each trade (0.20%) goes to liquidity providers as a protocol incentive." /> */}
+                </RowFixed>
+                <TYPE.black fontSize={14}>
+                  {realizedLPFee ? realizedLPFee?.toSignificant(6) + ' ' + trade?.inputAmount.currency.symbol : '-'}
+                </TYPE.black>
+              </RowBetween>
+            </AutoColumn>
+          </Card>
+        </SwapDetails>
+      )}
       <AdvancedSwapDetailsDropdown trade={trade} />
     </>
   )
 }
+
+const SwapDetails = styled.div`
+  background: ${({ theme }) => theme.bg1};
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+  min-width: 300px;
+  margin-top: 1rem;
+`
