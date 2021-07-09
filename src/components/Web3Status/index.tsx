@@ -99,7 +99,7 @@ const Text = styled.p`
   margin: 0 0.5rem 0 0.25rem;
   font-size: 1rem;
   width: fit-content;
-  font-weight: 500;
+  font-weight: 600;
 `
 
 const NetworkIcon = styled(Activity)`

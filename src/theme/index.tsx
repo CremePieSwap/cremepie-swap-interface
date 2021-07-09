@@ -53,18 +53,18 @@ export function colors(darkMode: boolean): Colors {
     black,
 
     // text
-    text1: darkMode ? '#5B5A99' : '#000000', // Main text
-    text2: darkMode ? '#50E3C2' : '#565A69', // Green
-    text3: darkMode ? '#6EA3AA' : '#888D9B', //Purple
-    text4: darkMode ? '#FFFFFF' : '#C3C5CB',
-    text5: darkMode ? '#2C2F36' : '#EDEEF2',
+    text1: darkMode ? '#5B5A99' : '#5B5A99', // Main text
+    text2: darkMode ? '#50E3C2' : '#50E3C2', // Green
+    text3: darkMode ? '#6EA3AA' : '#6EA3AA', //Purple
+    text4: darkMode ? '#FFFFFF' : '#FFFFFF',
+    text5: darkMode ? '#2C2F36' : '#2C2F36',
 
     // backgrounds / greys
     bg1: darkMode ? '#FFFFFF' : '#FFFFFF',
-    bg2: darkMode ? '#F5F5FA' : '#F7F8FA',
-    bg3: darkMode ? '#F5F5FA' : '#EDEEF2', //Purple
-    bg4: darkMode ? '#50E3C2' : '#CED0D9', // Green
-    bg5: darkMode ? '#6C7284' : '#888D9B',
+    bg2: darkMode ? '#F5F5FA' : '#F5F5FA',
+    bg3: darkMode ? '#F5F5FA' : '#F5F5FA', //Purple
+    bg4: darkMode ? '#50E3C2' : '#50E3C2', // Green
+    bg5: darkMode ? '#6C7284' : '#6C7284',
 
     //specialty colors
     modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
