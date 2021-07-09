@@ -10,7 +10,7 @@ import QuestionHelper from '../QuestionHelper'
 // import SwapIcon2 from '../../assets/svg/swap_icon_2.svg'
 
 const Tabs = styled.div`
-  width: 180px;
+  width: 170px;
   display: flex;
   margin: 20px auto;
   justify-content: center;

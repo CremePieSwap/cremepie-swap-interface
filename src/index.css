@@ -1,4 +1,8 @@
 @font-face {
+  font-family: 'SF-light';
+  src: url('./assets/fonts/SF-Pro-Rounded-Light.ttf') format('truetype')
+}
+@font-face {
   font-family: 'SF-400';
   src: url('./assets/fonts/SF-Pro-Rounded-Thin.otf') format('truetype')
 }
@@ -12,6 +16,6 @@
 }
 
 body {
-  font-family: 'SF-500', sans-serif;
+  font-family: 'SF-light', sans-serif;
   color: #FAE8BA;
 }

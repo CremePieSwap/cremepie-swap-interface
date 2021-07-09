@@ -10,19 +10,13 @@ import { useIsDarkMode } from '../state/user/hooks'
 import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
 import SFPro400 from '../assets/fonts/SF-Pro-Rounded-Thin.otf'
+import SFPro500 from '../assets/fonts/SF-Pro-Rounded-Medium.otf'
+import SFPro900 from '../assets/fonts/SF-Pro-Rounded-Bold.otf'
 
 
 
 export * from './components'
 
-export const FontFamily = createGlobalStyle`
-  @font-face {
-    font-family: SFPro400;
-    font-style: normal;
-    font-weight: 400;
-    src: url('${SFPro400}');
-  }
-`
 
 const MEDIA_WIDTHS = {
   upToExtraSmall: 500,
@@ -188,13 +182,32 @@ export const TYPE = {
 }
 
 export const FixedGlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: SFPro400;
+  font-style: normal;
+  font-weight: 400;
+  src: url('${SFPro400}');
+}
+@font-face {
+  font-family: SFPro500;
+  font-style: normal;
+  font-weight: 500;
+  src: url('${SFPro500}');
+}
+@font-face {
+  font-family: SFPro900;
+  font-style: normal;
+  font-weight: 900;
+  src: url('${SFPro900}');
+}
+
 html, input, textarea, button {
-  font-family: SF-900, sans-serif;
+  font-family: SFPro500, san-serif;
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {
   html, input, textarea, button {
-    font-family: SF-900, sans-serif;
+    font-family: SFPro500, san-serif;
   }
 }
 
