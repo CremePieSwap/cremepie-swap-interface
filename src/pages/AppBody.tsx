@@ -8,8 +8,12 @@ export const BodyWrapper = styled.div`
   width: 100%;
   background: url(${swap_background}) no-repeat;
   background-size: contain;
-  min-height: 700px;
+  min-height: 660px;
   padding: 1rem;
+  
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    min-height: 600px;
+  `};
 `
 
 /**
