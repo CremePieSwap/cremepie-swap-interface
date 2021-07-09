@@ -29,7 +29,7 @@ const BlockTitle = styled.div`
 const BlockContent = styled.div`
 `
 const Subtitle = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   line-height: 16px;
   color: ${({ theme }) => theme.text2};
 `
@@ -40,7 +40,7 @@ const Title = styled.div`
   color: ${({ theme }) => theme.text2};
 `
 const Subtitle2 = styled.div`
-  font-size: 10px;
+  font-size: 14px;
   line-height: 16px;
   color: ${({ theme }) => theme.text1};
 `

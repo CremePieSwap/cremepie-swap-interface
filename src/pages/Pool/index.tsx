@@ -142,7 +142,7 @@ export default function Pool() {
                     showDetail={() => set_show_pool_detail(!show_pool_detail)}
                   />
                 ))}
-                <Text textAlign="center" fontSize={12}>
+                <Text textAlign="center" fontSize={14}>
                     {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
                 </Text>
                 <ResponsiveButtonSecondary 
@@ -155,11 +155,11 @@ export default function Pool() {
               </>
             ) : (
               <EmptyProposals>
-                <TYPE.body fontSize={12} color={theme.text1} textAlign="center" style={{marginBottom: 10}}>
+                <TYPE.body fontSize={14} color={theme.text1} textAlign="center" style={{marginBottom: 10}}>
                   No liquidity found.
                 </TYPE.body>
                 <TYPE.body color={theme.text1} textAlign="center">
-                  <Text textAlign="center" fontSize={12} style={{ padding: '.5rem 0 .5rem 0', marginBottom: 5 }}>
+                  <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0', marginBottom: 5 }}>
                     {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
                   </Text>
                   <ResponsiveButtonSecondary 

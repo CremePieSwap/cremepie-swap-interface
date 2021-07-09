@@ -31,7 +31,7 @@ function V1PositionCard({ token, V1LiquidityBalance }: PositionCardProps) {
               {`${chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}/ETH`}
             </Text>
             <Text
-              fontSize={12}
+              fontSize={14}
               fontWeight={500}
               ml="0.5rem"
               px="0.75rem"

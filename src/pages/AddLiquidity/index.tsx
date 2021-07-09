@@ -206,7 +206,7 @@ export default function AddLiquidity({
       <AutoColumn gap="20px">
         <LightCard mt="20px" borderRadius="20px">
           <RowFlat>
-            <Text fontSize="48px" fontWeight={500} lineHeight="42px" marginRight={10}>
+            <Text fontSize="48px" fontWeight={500} lineHeight="42px" marginRight={12}>
               {currencies[Field.CURRENCY_A]?.symbol + '/' + currencies[Field.CURRENCY_B]?.symbol}
             </Text>
             <DoubleCurrencyLogo
@@ -220,7 +220,7 @@ export default function AddLiquidity({
     ) : (
       <AutoColumn gap="20px">
         <RowFlat style={{ marginTop: '20px' }}>
-          <Text fontSize="48px" fontWeight={500} lineHeight="42px" marginRight={10}>
+          <Text fontSize="48px" fontWeight={500} lineHeight="42px" marginRight={12}>
             {liquidityMinted?.toSignificant(6)}
           </Text>
           <DoubleCurrencyLogo
@@ -234,7 +234,7 @@ export default function AddLiquidity({
             {currencies[Field.CURRENCY_A]?.symbol + '/' + currencies[Field.CURRENCY_B]?.symbol + ' Pool Tokens'}
           </Text>
         </Row>
-        <TYPE.italic fontSize={12} textAlign="left" padding={'8px 0 0 0 '}>
+        <TYPE.italic fontSize={14} textAlign="left" padding={'8px 0 0 0 '}>
           {`Output is estimated. If the price changes by more than ${allowedSlippage /
             100}% your transaction will revert.`}
         </TYPE.italic>
@@ -428,7 +428,7 @@ export default function AddLiquidity({
           }}>
             <LightCard padding="0px" borderRadius={'20px'}>
               <RowBetween padding="1rem" style={{ paddingBottom: 0 }}>
-                <TYPE.subHeader fontWeight={500} fontSize={12}>
+                <TYPE.subHeader fontWeight={500} fontSize={14}>
                   {noLiquidity ? 'Initial prices' : 'Prices'} and pool share
                 </TYPE.subHeader>
               </RowBetween>{' '}

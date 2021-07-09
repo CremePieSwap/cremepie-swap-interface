@@ -113,7 +113,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
       <AutoColumn gap="2px">
         {Boolean(trade) && (
           <RowBetween align="center">
-            <Text fontWeight={400} fontSize={12} color={theme.text2}>
+            <Text fontWeight={400} fontSize={14} color={theme.text2}>
               Price
             </Text>
             <TradePrice
@@ -124,27 +124,27 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
           </RowBetween>
         )}
         <RowBetween align="center">
-          <ClickableText fontWeight={400} fontSize={12} color={theme.text2} onClick={toggleSettings}>
+          <ClickableText fontWeight={400} fontSize={14} color={theme.text2} onClick={toggleSettings}>
             Slippage Tolerance
           </ClickableText>
-          <ClickableText fontWeight={400} fontSize={12} color={theme.text2} onClick={toggleSettings}>
+          <ClickableText fontWeight={400} fontSize={14} color={theme.text2} onClick={toggleSettings}>
             {allowedSlippage / 100}%
           </ClickableText>
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <TYPE.black fontSize={12} fontWeight={400} color={theme.text2}>
+            <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
               {trade?.tradeType === TradeType.EXACT_INPUT ? 'Minimum received' : 'Maximum sold'}
             </TYPE.black>
             {/* <QuestionHelper text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed." /> */}
           </RowFixed>
           <RowFixed>
-            <TYPE.black fontSize={12}>
+            <TYPE.black fontSize={14}>
               {trade?.tradeType === TradeType.EXACT_INPUT
                 ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)
                 : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)}
             </TYPE.black>
-            <TYPE.black fontSize={12} marginLeft={'4px'}>
+            <TYPE.black fontSize={14} marginLeft={'4px'}>
               {trade?.tradeType === TradeType.EXACT_INPUT
                 ? trade?.outputAmount.currency.symbol ?? '-'
                 : trade?.inputAmount.currency.symbol ?? '-'}
@@ -153,7 +153,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <TYPE.black color={theme.text2} fontSize={12} fontWeight={400}>
+            <TYPE.black color={theme.text2} fontSize={14} fontWeight={400}>
               Price Impact
             </TYPE.black>
             {/* <QuestionHelper text="The difference between the market price and your price due to trade size." /> */}
@@ -162,12 +162,12 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
         </RowBetween>
         <RowBetween>
           <RowFixed>
-            <TYPE.black fontSize={12} fontWeight={400} color={theme.text2}>
+            <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
               Liquidity Provider Fee
             </TYPE.black>
             {/* <QuestionHelper text="A portion of each trade (0.20%) goes to liquidity providers as a protocol incentive." /> */}
           </RowFixed>
-          <TYPE.black fontSize={12}>
+          <TYPE.black fontSize={14}>
             {realizedLPFee ? realizedLPFee?.toSignificant(6) + ' ' + trade?.inputAmount.currency.symbol : '-'}
           </TYPE.black>
         </RowBetween>

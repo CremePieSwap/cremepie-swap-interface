@@ -113,7 +113,7 @@ export const ButtonSecondary = styled(Base)`
   border: 1px solid ${({ theme }) => theme.text2};
   background-color: transparent;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 14px;
   &:focus {
   }
   &:hover {

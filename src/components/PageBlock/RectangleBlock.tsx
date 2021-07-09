@@ -101,7 +101,7 @@ const Subtitle4 = styled.div`
   color: #A9A9A9;
 `
 const Description4 = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   line-height: 40px;
   font-weight: 400;
   color: #A9A9A9;
@@ -113,7 +113,7 @@ const Title5 = styled.div`
   color: #50E3C2;
 `
 const Subtitle5 = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   line-height: 23px;
   font-weight: 400;
   color: #A9A9A9;

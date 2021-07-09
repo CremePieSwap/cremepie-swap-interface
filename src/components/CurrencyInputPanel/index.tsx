@@ -158,7 +158,7 @@ export default function CurrencyInputPanel({
         {!hideInput && (
           <LabelRow>
             <RowBetween>
-              <TYPE.body color={theme.text1} fontWeight={600} fontSize={12}>
+              <TYPE.body color={theme.text1} fontWeight={600} fontSize={14}>
                 {label}
               </TYPE.body>
               {account && (
@@ -166,7 +166,7 @@ export default function CurrencyInputPanel({
                   onClick={onMax}
                   color={theme.text1}
                   fontWeight={600}
-                  fontSize={12}
+                  fontSize={14}
                   style={{ display: 'inline', cursor: 'pointer' }}
                 >
                   {!hideBalance && !!currency && selectedCurrencyBalance
