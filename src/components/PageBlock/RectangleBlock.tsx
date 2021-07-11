@@ -42,13 +42,13 @@ const Subtitle = styled.div<{ color: string }>`
 const Title = styled.div<{ color: string }>`
   font-size: 24px;
   line-height: 23px;
-  font-weight: 900;
+  font-family: SFPro900;
   color: ${({ color }) => color};
 `
 const Title3 = styled.div`
   font-size: 24px;
   line-height: 40px;
-  font-weight: 900;
+  font-family: SFPro900;
   color: ${({ theme }) => theme.text1};
   .highlight {
     color: #E3507A
@@ -57,7 +57,7 @@ const Title3 = styled.div`
 const Subtitle3 = styled.div`
   font-size: 14px;
   line-height: 14px;
-  font-weight: 500;
+  font-family: SFPro500;
   color: ${({ theme }) => theme.text1};
   .highlight {
     color: #E3507A
@@ -75,7 +75,7 @@ const ButtonRow = styled.div`
 const Button = styled.div`
   font-size: 14px;
   line-height: 14px;
-  font-weight: 500;
+  font-family: SFPro500;
   color: ${({ theme }) => theme.white};
   background: #E3507A;
   border-radius: 32px;
@@ -91,7 +91,7 @@ const Button = styled.div`
 const Title4 = styled.div`
   font-size: 32px;
   line-height: 40px;
-  font-weight: 900;  
+  font-family: SFPro900;  
   color: #A9A9A9;
 `
 const Subtitle4 = styled.div`
@@ -109,7 +109,7 @@ const Description4 = styled.div`
 const Title5 = styled.div`
   font-size: 32px;
   line-height: 40px;
-  font-weight: 900;  
+  font-family: SFPro900;
   color: #50E3C2;
 `
 const Subtitle5 = styled.div`

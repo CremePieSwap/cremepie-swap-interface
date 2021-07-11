@@ -27,7 +27,7 @@ const Title = styled.div`
 `
 const Subtitle = styled.div`
   color: #A9A9A9;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
 `
 
@@ -39,7 +39,7 @@ export default function PageTitle() {
         <Title>
           <img src={TitleImage} alt="page title"/>
         </Title>
-        <Subtitle>The #1 AMM and yield farm on Binance Smart Chain.</Subtitle>
+        <Subtitle>The #1 AMM and yield farm on Polygon.</Subtitle>
       </Text>
     </StylePageTitle>
   )
