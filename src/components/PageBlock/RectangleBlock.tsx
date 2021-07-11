@@ -69,7 +69,6 @@ const ButtonRow = styled.div`
   padding: 20px 160px 0;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     padding: 20px 0 0;
-    justify-content: space-between;
   `};
 `
 const Button = styled.div`
