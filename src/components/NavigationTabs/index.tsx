@@ -32,7 +32,7 @@ const StyledNavLink = styled(NavLink).attrs({
   border-radius: 43px;
   padding: 5px 20px;
   font-size: 14px;
-  font-weight: 900;
+  font-family: SFPro900;
   text-decoration: none;
   &.${activeClassName} {
     background: ${({ theme }) => theme.text1};
@@ -47,14 +47,14 @@ const StylePageTitle = styled.div`
   color: ${({ theme }) => theme.text1};
   font-size: 32px;
   line-height: 40px;
-  font-weight: 900;
+  font-family: SFPro900;
 `
 
 const StylePageSubtitle = styled.div`
   color: ${({ theme }) => theme.text1};
   font-size: 14px;
   line-height: 40px;
-  font-weight: 500;
+  font-family: SFPro500;
   &.pool {
     margin-bottom: 120px;
   }

@@ -11,7 +11,7 @@ import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
 import SFPro400 from '../assets/fonts/SF-Pro-Rounded-Thin.otf'
 import SFPro500 from '../assets/fonts/SF-Pro-Rounded-Medium.otf'
-import SFPro900 from '../assets/fonts/SF-Pro-Rounded-Bold.otf'
+import SFPro900 from '../assets/fonts/SF-Pro-Rounded-Black.otf'
 
 
 
@@ -191,13 +191,13 @@ export const FixedGlobalStyle = createGlobalStyle`
 @font-face {
   font-family: SFPro500;
   font-style: normal;
-  font-weight: 500;
+  font-family: SFPro500;
   src: url('${SFPro500}');
 }
 @font-face {
   font-family: SFPro900;
   font-style: normal;
-  font-weight: 900;
+  font-family: SFPro900;
   src: url('${SFPro900}');
 }
 

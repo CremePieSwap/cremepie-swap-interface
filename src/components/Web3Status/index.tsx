@@ -52,7 +52,7 @@ const Web3StatusError = styled(Web3StatusGeneric)`
   background-color: ${({ theme }) => theme.red1};
   border: 1px solid ${({ theme }) => theme.red1};
   color: ${({ theme }) => theme.white};
-  font-weight: 500;
+  font-family: SFPro500;
   :hover,
   :focus {
     background-color: ${({ theme }) => darken(0.1, theme.red1)};
@@ -63,7 +63,7 @@ const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
   background-color: ${({ theme }) => theme.bg4};
   border: none;
   color: ${({ theme }) => theme.text3};
-  font-weight: 500;
+  font-family: SFPro500;
 
   :hover,
   :focus {
@@ -81,7 +81,7 @@ const Web3StatusConnected = styled(Web3StatusGeneric)<{ pending?: boolean }>`
   border: 1px solid ${({ pending, theme }) => (pending ? theme.primary1 : theme.bg4)};
   color: ${({ pending, theme }) => (pending ? theme.white : theme.text1)};
   border-radius: 40px;
-  font-weight: 500;
+  font-family: SFPro500;
   :hover,
   :focus {
     background-color: ${({ pending, theme }) => (pending ? darken(0.05, theme.primary1) : lighten(0.05, theme.bg2))};

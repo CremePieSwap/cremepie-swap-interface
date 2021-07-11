@@ -36,8 +36,9 @@ const Subtitle = styled.div`
 const Title = styled.div`
   font-size: 30px;
   line-height: 40px;
-  font-weight: 900;
+  font-family: SFPro900;
   color: ${({ theme }) => theme.text2};
+  font-family: SFPro900;
 `
 const Subtitle2 = styled.div`
   font-size: 14px;
@@ -49,12 +50,15 @@ const BlockButton = styled.div`
   line-height: 24px;
   text-align: center;
   font-weight: 600;
-  color: ${({ theme }) => theme.text1};
-  height: 24px;
+  color: ${({ theme }) => theme.text4};
+  height: 30px;
   background-color: ${({ theme }) => theme.text2};
   box-shadow: 1px 1px 0px rgba(170, 170, 204, 0.5);
   border-radius: 32px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 const PieBackground = styled.div`
   position: absolute;

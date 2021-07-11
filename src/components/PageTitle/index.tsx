@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import TitleImage from '../../assets/svg/title.svg'
 import HomeBackground from '../../assets/images/home-background.png'
 
 const StylePageTitle = styled.div`
@@ -22,7 +20,7 @@ const Text = styled.div`
 const Title = styled.div`
   color: #E3507A;
   font-size: 30px;
-  font-weight: 700;
+  font-family: SFPro900;
   margin-bottom: 5px;
 `
 const Subtitle = styled.div`
@@ -37,9 +35,9 @@ export default function PageTitle() {
     <StylePageTitle>
       <Text>
         <Title>
-          <img src={TitleImage} alt="page title"/>
+          CremePie Swap
         </Title>
-        <Subtitle>The #1 AMM and yield farm on Binance Smart Chain.</Subtitle>
+        <Subtitle>The #1 AMM and yield farm on Polygon.</Subtitle>
       </Text>
     </StylePageTitle>
   )

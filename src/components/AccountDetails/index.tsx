@@ -26,7 +26,7 @@ import BinanceIcon from '../../assets/images/matic.png'
 const HeaderRow = styled.div`
   ${({ theme }) => theme.flexRowNoWrap};
   padding: 1rem 1rem;
-  font-weight: 500;
+  font-family: SFPro500;
   color: ${props => (props.color === 'blue' ? ({ theme }) => theme.primary1 : 'inherit')};
   ${({ theme }) => theme.mediaWidth.upToMedium`
     padding: 1rem;
@@ -49,7 +49,7 @@ const UpperSection = styled.div`
 
   h4 {
     margin-top: 0;
-    font-weight: 500;
+    font-family: SFPro500;
   }
 `
 
@@ -90,7 +90,7 @@ const YourAccount = styled.div`
 
   h4 {
     margin: 0;
-    font-weight: 500;
+    font-family: SFPro500;
   }
 `
 
@@ -116,7 +116,7 @@ const AccountControl = styled.div`
   min-width: 0;
   width: 100%;
 
-  font-weight: 500;
+  font-family: SFPro500;
   font-size: 1.25rem;
 
   a:hover {
@@ -162,7 +162,7 @@ const CloseColor = styled(Close)`
 const WalletName = styled.div`
   width: initial;
   font-size: 0.825rem;
-  font-weight: 500;
+  font-family: SFPro500;
   color: ${({ theme }) => theme.text3};
 `
 
