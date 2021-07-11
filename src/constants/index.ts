@@ -125,8 +125,8 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT],
-  [ChainId.BSC_MAINNET]: [...WETH_ONLY[ChainId.BSC_MAINNET], B_USDT, BUSD, B_DAI],
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET]],
+  [ChainId.BSC_MAINNET]: [...WETH_ONLY[ChainId.BSC_MAINNET]],
   [ChainId.BSC_TESTNET]: [...WETH_ONLY[ChainId.BSC_TESTNET], T_USDT, T_BUSD, T_DAI]
 }
 
@@ -195,24 +195,6 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     description: 'A Crypto Wallet for Binance Smart Chain',
     href: null,
     color: '#F9A825'
-  },
-  COIN98: {
-    connector: injected,
-    name: 'Coin98 Wallet',
-    iconName: 'coin98.png',
-    description: 'Crypto Wallet & Payment Gateway',
-    href: null,
-    color: '#E8831D',
-    mobile: true
-  },
-  ONTO: {
-    connector: injected,
-    name: 'Onto Wallet',
-    iconName: 'onto.svg',
-    description: 'Ontology Data Wallet',
-    href: null,
-    color: '#E8831D',
-    mobile: true
   },
   WALLET_CONNECT: {
     connector: walletconnect,
