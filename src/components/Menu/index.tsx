@@ -12,7 +12,7 @@ import { isMobile } from 'react-device-detect'
 import Home from '../../assets/svg/home_icon.svg'
 import Trade from '../../assets/svg/trade_icon.svg'
 // import Pools from '../../assets/svg/pools_icon.svg'
-import Farm from '../../assets/svg/farm_icon.svg'
+// import Farm from '../../assets/svg/farm_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
 
 const MenuFlyout = styled.div<{ isMobile: boolean, showMenu: boolean }>`
@@ -84,39 +84,39 @@ const StyledNavLink = styled(NavLink).attrs({
       }
     }
   `
-  const StyledAbsoluteLink = styled.a`
-      display: flex;
-      align-items: center;
-      padding: 1rem;
-      overflow: hidden;
-      text-decoration: none;
-      font-weight: 600;
-      color: ${({ theme }) => theme.text3};
-      :hover {
-        color: ${({ theme }) => theme.text2};
-        background: #89DBC420;
-        cursor: pointer;
-      }
-      > img {
-        width: 12px;
-        margin-right: 1.25rem;
-        margin-left: 0.5rem;
-        &.active {
-          display: none;
-          margin-left: 0;
-        }
-      }
+  // const StyledAbsoluteLink = styled.a`
+  //     display: flex;
+  //     align-items: center;
+  //     padding: 1rem;
+  //     overflow: hidden;
+  //     text-decoration: none;
+  //     font-weight: 600;
+  //     color: ${({ theme }) => theme.text3};
+  //     :hover {
+  //       color: ${({ theme }) => theme.text2};
+  //       background: #89DBC420;
+  //       cursor: pointer;
+  //     }
+  //     > img {
+  //       width: 12px;
+  //       margin-right: 1.25rem;
+  //       margin-left: 0.5rem;
+  //       &.active {
+  //         display: none;
+  //         margin-left: 0;
+  //       }
+  //     }
       
-      &.${activeClassName} {
-        > img {
-          &.active {
-            display: block;
-            position: absolute;
-            left: 0;
-          }
-        }
-      }
-    `
+  //     &.${activeClassName} {
+  //       > img {
+  //         &.active {
+  //           display: block;
+  //           position: absolute;
+  //           left: 0;
+  //         }
+  //       }
+  //     }
+  //   `
 const StyledNotNavLink = styled.div`
     display: flex;
     align-items: center;
@@ -251,12 +251,12 @@ export default function Menu({
         Liquidity
       </StyledSubMenu>
       </>}
-      <StyledAbsoluteLink
+      {/* <StyledAbsoluteLink
         href="http://212.47.235.97:3333/farms"
       >
         <img src={Farm} alt="farm" />
         Farm
-      </StyledAbsoluteLink>
+      </StyledAbsoluteLink> */}
       {/* <StyledAbsoluteLink
         href="https://swap.bscex.org/#/swap"
       >
