@@ -65,9 +65,7 @@ const StyledNavLink = styled(NavLink).attrs({
       cursor: pointer;
     }
     > img {
-      width: 12px;
       margin-right: 1.25rem;
-      margin-left: 0.5rem;
       &.active {
         display: none;
         margin-left: 0;
@@ -98,9 +96,7 @@ const StyledNavLink = styled(NavLink).attrs({
   //       cursor: pointer;
   //     }
   //     > img {
-  //       width: 12px;
   //       margin-right: 1.25rem;
-  //       margin-left: 0.5rem;
   //       &.active {
   //         display: none;
   //         margin-left: 0;
@@ -132,9 +128,7 @@ const StyledNotNavLink = styled.div`
       cursor: pointer;
     }
     > img {
-      width: 12px;
       margin-right: 1.25rem;
-      margin-left: 0.5rem;
     }
     
     .active {
@@ -160,9 +154,7 @@ const StyledSubMenu = styled(NavLink).attrs({
       cursor: pointer;
     }
     > img {
-      width: 12px;
       margin-right: 1.25rem;
-      margin-left: 0.5rem;
       &.active {
         display: none;
         margin-left: 0;
