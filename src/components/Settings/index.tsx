@@ -181,7 +181,7 @@ export default function SettingsTab() {
           </AutoColumn>
         </ModalContentWrapper>
       </Modal>
-      <img src={SwapIcon1} alt="" style={{ marginRight: 10 }} onClick={toggle} id="open-settings-dialog-button"/>
+      <img src={SwapIcon1} alt="" style={{ marginRight: 10, cursor: 'pointer' }} onClick={toggle} id="open-settings-dialog-button"/>
       {/* <StyledMenuButton onClick={toggle} id="open-settings-dialog-button">
         <StyledMenuIcon />
         {expertMode ? (
