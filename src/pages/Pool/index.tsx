@@ -13,6 +13,8 @@ import Card from '../../components/Card'
 import { RowBetween, RowFixed } from '../../components/Row'
 import { ButtonPrimary, ButtonSecondary, ButtonLight } from '../../components/Button'
 import { AutoColumn } from '../../components/Column'
+import LiquidityDescription from '../../components/LiquidityDescription'
+
 import AppBody from '../AppBody'
 
 import { useActiveWeb3React } from '../../hooks'
@@ -196,6 +198,7 @@ export default function Pool() {
           </AutoColumn>
         </AutoColumn>
       </AppBody>
+      <LiquidityDescription/>
     </>
   )
 }
