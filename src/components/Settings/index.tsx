@@ -94,7 +94,8 @@ const MenuFlyout = styled.span`
   flex-direction: column;
   font-size: 1rem;
   position: absolute;
-  top: 2rem;
+  top: 3rem;
+  right: 0;
   z-index: 100;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
