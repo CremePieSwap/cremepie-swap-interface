@@ -23,6 +23,8 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   4: 'rinkeby.etherscan.io',
   5: 'goerli.etherscan.io',
   42: 'kovan.etherscan.io',
+  56: 'bscscan.com',
+  97: 'testnet.bscscan.com',
   137: 'polygonscan.com',
   80001: 'mumbai.polygonscan.com'
 }

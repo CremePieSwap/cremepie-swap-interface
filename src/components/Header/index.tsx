@@ -283,7 +283,9 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.GÖRLI]: 'Görli',
   [ChainId.KOVAN]: 'Kovan',
   [ChainId.BSC_MAINNET]: undefined,
-  [ChainId.BSC_TESTNET]: 'testnet'
+  [ChainId.BSC_TESTNET]: 'testnet',
+  [ChainId.POLYGON_MAINNET]: undefined,
+  [ChainId.POLYGON_TESTNET]: 'testnet'
 }
 
 interface HeaderProps {
