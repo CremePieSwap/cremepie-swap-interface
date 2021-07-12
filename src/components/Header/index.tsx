@@ -18,7 +18,7 @@ import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
 
 import { YellowCard } from '../Card'
-// import Settings from '../Settings'
+import Settings from '../Settings'
 
 import { RowFixed } from '../Row'
 import Web3Status from '../Web3Status'
@@ -386,6 +386,7 @@ export default function Header({
             ) : null}
             <Web3Status />
           </AccountElement>
+          <Settings />
         </HeaderElement>
         {/* <HeaderElementWrap>
           <Settings />

@@ -140,7 +140,7 @@ export default function RectangleBlock({
             {type === 1 ? 'Earn' : 'Earn up to'}
           </Subtitle>
           <Title color={titleColor}>
-            {type === 1 ? 'CPIE, BSCX, Barmy, zdCash...' : '358.27%'}
+            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '358.27%'}
           </Title>
           <Subtitle color={subtitleColor}>
             {type === 1 ? 'In Pools' : 'APR in Farms'}
@@ -191,7 +191,7 @@ export default function RectangleBlock({
             {type === 1 ? 'Earn' : 'Earn up to'}
           </Subtitle>
           <Title color={titleColor}>
-            {type === 1 ? 'CPIE, BSCX, Barmy, zdCash...' : '358.27%'}
+            {type === 1 ? 'CPIE, 100xCoin, LZ...' : '358.27%'}
           </Title>
           <Subtitle color={subtitleColor}>
             {type === 1 ? 'In Pools' : 'APR in Farms'}

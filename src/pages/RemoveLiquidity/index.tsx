@@ -43,6 +43,7 @@ import { Field } from '../../state/burn/actions'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { useUserSlippageTolerance } from '../../state/user/hooks'
 import { BigNumber } from '@ethersproject/bignumber'
+import LiquidityDescription from '../../components/LiquidityDescription'
 
 export default function RemoveLiquidity({
   history,
@@ -690,6 +691,7 @@ export default function RemoveLiquidity({
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} showDetail={() => {}}/>
         </AutoColumn>
       ) : null}
+      <LiquidityDescription/>
     </>
   )
 }
