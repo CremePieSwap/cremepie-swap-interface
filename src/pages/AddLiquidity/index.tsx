@@ -37,6 +37,7 @@ import { Dots, Wrapper } from '../Pool/styleds'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { currencyId } from '../../utils/currencyId'
 import { PoolPriceBar } from './PoolPriceBar'
+import LiquidityDescription from '../../components/LiquidityDescription'
 
 export default function AddLiquidity({
   match: {
@@ -444,6 +445,7 @@ export default function AddLiquidity({
           </div>
         </>
       )}
+      <LiquidityDescription/>
     </>
   )
 }
