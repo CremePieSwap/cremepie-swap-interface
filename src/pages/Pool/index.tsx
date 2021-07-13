@@ -178,7 +178,7 @@ export default function Pool() {
             <>
               <TitleRow style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }} padding={'0'}>
                 <ButtonRow>
-                  <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to="/add/ETH">
+                  <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to="/add/MATIC">
                     <Text fontWeight={500} fontSize={16}>
                       Add Liquidity
                     </Text>
@@ -187,7 +187,7 @@ export default function Pool() {
               </TitleRow>
               <TitleRow style={{display: 'flex', justifyContent: 'center' }} padding={'0'}>
                 <ButtonRow>
-                  <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
+                  <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/MATIC">
                     Create a pair
                   </ResponsiveButtonSecondary>
                 </ButtonRow>
