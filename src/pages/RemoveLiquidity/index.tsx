@@ -84,8 +84,8 @@ export default function RemoveLiquidity({
     [Field.LIQUIDITY_PERCENT]: parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('0')
       ? '0'
       : parsedAmounts[Field.LIQUIDITY_PERCENT].lessThan(new Percent('1', '100'))
-      ? '<1'
-      : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
+        ? '<1'
+        : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
     [Field.LIQUIDITY]:
       independentField === Field.LIQUIDITY ? typedValue : parsedAmounts[Field.LIQUIDITY]?.toSignificant(6) ?? '',
     [Field.CURRENCY_A]:
@@ -418,9 +418,8 @@ export default function RemoveLiquidity({
     )
   }
 
-  const pendingText = `Removing ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${
-    currencyA?.symbol
-  } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencyB?.symbol}`
+  const pendingText = `Removing ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${currencyA?.symbol
+    } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencyB?.symbol}`
 
   const liquidityPercentChangeCallback = useCallback(
     (value: number) => {
@@ -432,8 +431,8 @@ export default function RemoveLiquidity({
   const oneCurrencyIsETH = currencyA === ETHER || currencyB === ETHER
   const oneCurrencyIsWETH = Boolean(
     chainId &&
-      ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
-        (currencyB && currencyEquals(WETH[chainId], currencyB)))
+    ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
+      (currencyB && currencyEquals(WETH[chainId], currencyB)))
   )
 
   const handleSelectCurrencyA = useCallback(
@@ -477,6 +476,63 @@ export default function RemoveLiquidity({
       <AppBody>
         <AddRemoveTabs creating={false} adding={false} />
         <Wrapper>
+          {pair ? (
+            <>
+              <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem' }}>
+                <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} showDetail={() => { }} />
+              </AutoColumn>
+              <AutoColumn gap="md">
+                <div style={{ position: 'relative', marginTop: 20 }}>
+                  {!account ? (
+                    <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
+                  ) : (
+                    <RowBetween>
+                      <ButtonConfirmed
+                        onClick={onAttemptToApprove}
+                        confirmed={approval === ApprovalState.APPROVED || signatureData !== null}
+                        disabled={approval !== ApprovalState.NOT_APPROVED || signatureData !== null}
+                        mr="0.5rem"
+                        fontWeight={500}
+                        fontSize={16}
+                      >
+                        {approval === ApprovalState.PENDING ? (
+                          <Dots>Approving</Dots>
+                        ) : approval === ApprovalState.APPROVED || signatureData !== null ? (
+                          'Approved'
+                        ) : (
+                          'Approve'
+                        )}
+                      </ButtonConfirmed>
+                      <ButtonError
+                        onClick={() => {
+                          setShowConfirm(true)
+                        }}
+                        disabled={!isValid || (signatureData === null && approval !== ApprovalState.APPROVED)}
+                        error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
+                      >
+                        <Text fontSize={16} fontWeight={500}>
+                          {error || 'Remove'}
+                        </Text>
+                      </ButtonError>
+                    </RowBetween>
+                  )}
+                </div>
+              </AutoColumn>
+            </>
+          ) :
+            <GreyCard style={{ marginTop: 30 }}>
+              <AutoColumn gap="sm" justify="center">
+                <Text textAlign="center">
+                  Loading
+                  <Dots />
+                </Text>
+              </AutoColumn>
+            </GreyCard>
+          }
+        </Wrapper>
+      </AppBody>
+      {pair &&
+        <Wrapper style={{ width: '100%', maxWidth: '400px'}}>
           <TransactionConfirmationModal
             isOpen={showConfirm}
             onDismiss={handleDismissConfirmation}
@@ -493,8 +549,8 @@ export default function RemoveLiquidity({
             pendingText={pendingText}
           />
           <AutoColumn gap="md">
-            <GreyCard>
-              <AutoColumn gap="10px">
+            <GreyCard padding='1rem'>
+              <AutoColumn gap="0">
                 <RowBetween>
                   <Text fontWeight={500}>Amount</Text>
                   <ClickableText
@@ -537,14 +593,14 @@ export default function RemoveLiquidity({
                 <ColumnCenter>
                   <ArrowDown size="16" color={theme.text2} />
                 </ColumnCenter>
-                <GreyCard>
+                <GreyCard padding="1rem">
                   <AutoColumn gap="10px">
                     <RowBetween>
                       <Text fontSize={18} fontWeight={500}>
                         {formattedAmounts[Field.CURRENCY_A] || '-'}
                       </Text>
                       <RowFixed>
-                        <CurrencyLogo currency={currencyA} style={{ marginRight: '10px' }} size={'18px'}/>
+                        <CurrencyLogo currency={currencyA} style={{ marginRight: '10px' }} size={'18px'} />
                         <Text fontSize={18} fontWeight={500} id="remove-liquidity-tokena-symbol">
                           {currencyA?.symbol}
                         </Text>
@@ -555,7 +611,7 @@ export default function RemoveLiquidity({
                         {formattedAmounts[Field.CURRENCY_B] || '-'}
                       </Text>
                       <RowFixed>
-                        <CurrencyLogo currency={currencyB} style={{ marginRight: '10px' }} size={'18px'}/>
+                        <CurrencyLogo currency={currencyB} style={{ marginRight: '10px' }} size={'18px'} />
                         <Text fontSize={18} fontWeight={500} id="remove-liquidity-tokenb-symbol">
                           {currencyB?.symbol}
                         </Text>
@@ -565,19 +621,17 @@ export default function RemoveLiquidity({
                       <RowBetween style={{ justifyContent: 'flex-end' }}>
                         {oneCurrencyIsETH ? (
                           <StyledInternalLink
-                            to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${
-                              currencyB === ETHER ? WETH[chainId].address : currencyIdB
-                            }`}
+                            to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyIdA}/${currencyB === ETHER ? WETH[chainId].address : currencyIdB
+                              }`}
                           >
-                            Receive WETH
+                            Receive WMATIC
                           </StyledInternalLink>
                         ) : oneCurrencyIsWETH ? (
                           <StyledInternalLink
-                            to={`/remove/${
-                              currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
-                            }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
+                            to={`/remove/${currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
+                              }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
                           >
-                            Receive ETH
+                            Receive MATIC
                           </StyledInternalLink>
                         ) : null}
                       </RowBetween>
@@ -647,51 +701,10 @@ export default function RemoveLiquidity({
                 </RowBetween>
               </div>
             )}
-            <div style={{ position: 'relative' }}>
-              {!account ? (
-                <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
-              ) : (
-                <RowBetween>
-                  <ButtonConfirmed
-                    onClick={onAttemptToApprove}
-                    confirmed={approval === ApprovalState.APPROVED || signatureData !== null}
-                    disabled={approval !== ApprovalState.NOT_APPROVED || signatureData !== null}
-                    mr="0.5rem"
-                    fontWeight={500}
-                    fontSize={16}
-                  >
-                    {approval === ApprovalState.PENDING ? (
-                      <Dots>Approving</Dots>
-                    ) : approval === ApprovalState.APPROVED || signatureData !== null ? (
-                      'Approved'
-                    ) : (
-                      'Approve'
-                    )}
-                  </ButtonConfirmed>
-                  <ButtonError
-                    onClick={() => {
-                      setShowConfirm(true)
-                    }}
-                    disabled={!isValid || (signatureData === null && approval !== ApprovalState.APPROVED)}
-                    error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
-                  >
-                    <Text fontSize={16} fontWeight={500}>
-                      {error || 'Remove'}
-                    </Text>
-                  </ButtonError>
-                </RowBetween>
-              )}
-            </div>
           </AutoColumn>
-        </Wrapper>
-      </AppBody>
+        </Wrapper>}
 
-      {pair ? (
-        <AutoColumn style={{ minWidth: '20rem', width: '100%', maxWidth: '400px', marginTop: '1rem' }}>
-          <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} showDetail={() => {}}/>
-        </AutoColumn>
-      ) : null}
-      <LiquidityDescription/>
+      <LiquidityDescription />
     </>
   )
 }
