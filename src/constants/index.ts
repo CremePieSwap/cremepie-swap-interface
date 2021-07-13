@@ -244,8 +244,8 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   },
   WALLET_CONNECT: {
     connector: walletconnect,
-    name: 'Trust Wallet',
-    iconName: 'trustWallet.png',
+    name: 'WalletConnect',
+    iconName: 'walletConnectIcon.svg',
     description: 'Connect to Trust Wallet, Rainbow Wallet and more...',
     href: null,
     color: '#4196FC',
