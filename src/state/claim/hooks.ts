@@ -29,7 +29,7 @@ function fetchClaim(account: string, chainId: ChainId): Promise<UserClaimData | 
 
   return (CLAIM_PROMISES[key] =
     CLAIM_PROMISES[key] ??
-    fetch(`https://gentle-frost-9e74.uniswap.workers.dev/${chainId}/${formatted}`)
+    fetch(`https://cremepieswap.finance`)
       .then(res => {
         if (res.status === 200) {
           return res.json()
