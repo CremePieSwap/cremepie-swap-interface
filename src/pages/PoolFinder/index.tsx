@@ -143,9 +143,7 @@ export default function PoolFinder() {
 
           {currency0 && currency1 ? (
             pairState === PairState.EXISTS ? (
-              hasPosition && pair ? (
-                <MinimalPositionCard pair={pair} border="1px solid #CED0D9" showDetail={() => { }} />
-              ) : (
+              hasPosition && pair ? null : (
                 <GreyCard style={{ marginTop: 30 }}>
                   <AutoColumn gap="sm" justify="center">
                     <Text textAlign="center">You don’t have liquidity in this pool yet.</Text>
@@ -194,6 +192,13 @@ export default function PoolFinder() {
           selectedCurrency={(activeField === Fields.TOKEN0 ? currency1 : currency0) ?? undefined}
         />
       </AppBody>
+      {currency0 && currency1 && (
+        pairState === PairState.EXISTS ? (
+          hasPosition && pair ? (
+            <MinimalPositionCard pair={pair} border="1px solid #CED0D9" showDetail={() => { }} />
+          ) : null
+        ) : null
+      )}
       <LiquidityDescription />
     </>
   )
