@@ -20,6 +20,8 @@ import { shortenAddress } from '../../utils'
 import { ButtonSecondary } from '../Button'
 import BinanceIcon from '../../assets/images/matic.png'
 
+import Settings from '../Settings'
+
 import Identicon from '../Identicon'
 import Loader from '../Loader'
 
@@ -62,7 +64,7 @@ const Web3StatusError = styled(Web3StatusGeneric)`
 const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
   background-color: ${({ theme }) => theme.bg4};
   border: none;
-  color: ${({ theme }) => theme.text3};
+  color: ${({ theme }) => theme.text1};
   font-family: SFPro500;
 
   :hover,
@@ -179,6 +181,7 @@ function Web3StatusInner() {
 
   if (account) {
     return (
+      <>
       <Web3StatusConnected 
         id="web3-status-connected" 
         onClick={toggleWalletModal} 
@@ -196,6 +199,8 @@ function Web3StatusInner() {
         )}
         {!hasPendingTransactions && connector && <StatusIcon connector={connector} />}
       </Web3StatusConnected>
+      <Settings />
+      </>
     )
   } else if (error) {
     return (
@@ -206,14 +211,18 @@ function Web3StatusInner() {
     )
   } else {
     return (
-      <Web3StatusConnect id="connect-wallet" onClick={toggleWalletModal} faded={!account}>
+      <Web3StatusConnect id="connect-wallet" 
+        onClick={toggleWalletModal} 
+        faded={!account} 
+        style={{marginLeft: 30}}
+      >
         <Text>Connect wallet</Text>
       </Web3StatusConnect>
     )
   }
 }
 
-export default function Web3Status() {
+export default function Web3Status() { 
   const { active, account } = useWeb3React()
   const contextNetwork = useWeb3React(NetworkContextName)
 
