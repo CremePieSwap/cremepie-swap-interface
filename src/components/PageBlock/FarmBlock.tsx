@@ -74,12 +74,12 @@ export default function FarmBlock() {
       <BlockTitle>Farms & Staking</BlockTitle>
       <img src={MiniCremePie} alt="Mini pie" />
       <BlockContent>
-        <Subtitle>Creme To Harvest</Subtitle>
+        <Subtitle>CPIE To Harvest</Subtitle>
         <Title>0.0000</Title>
         <Subtitle2>~$0.00</Subtitle2>
       </BlockContent>
       <BlockContent style={{ margin: '20px 0' }}>
-        <Subtitle>Creme In Wallet</Subtitle>
+        <Subtitle>CPIE In Wallet</Subtitle>
         <Title>0.0000</Title>
         <Subtitle2>~$0.00</Subtitle2>
       </BlockContent>

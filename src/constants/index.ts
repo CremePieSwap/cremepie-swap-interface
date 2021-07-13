@@ -64,6 +64,43 @@ export const T_USDT = new Token(
   'Tether USD'
 )
 
+export const P_USDC = new Token(
+  ChainId.POLYGON_MAINNET,
+  '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+  18,
+  'USDC',
+  'USDC Token'
+)
+export const P_USDT = new Token(
+  ChainId.POLYGON_MAINNET,
+  '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+  18,
+  'USDT',
+  'Tether USD'
+)
+
+export const PT_DAI = new Token(
+  ChainId.POLYGON_TESTNET,
+  '0xEC5dCb5Dbf4B114C9d0F65BcCAb49EC54F6A0867',
+  18,
+  'DAI',
+  'Dai Token'
+)
+export const PT_BUSD = new Token(
+  ChainId.POLYGON_TESTNET,
+  '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
+  6,
+  'BUSD',
+  'BUSD Token'
+)
+export const PT_USDT = new Token(
+  ChainId.POLYGON_TESTNET,
+  '0x337610d27c682E347C9cD60BD4b3b107C9d34dDd',
+  6,
+  'USDT',
+  'Tether USD'
+)
+
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
 export const AVERAGE_BLOCK_TIME_IN_SECS = 14
 export const PROPOSAL_LENGTH_IN_BLOCKS = 40_320
@@ -81,7 +118,9 @@ export const UNI: { [chainId in ChainId]: Token } = {
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
   [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
   [ChainId.BSC_MAINNET]: new Token(ChainId.BSC_MAINNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
-  [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap')
+  [ChainId.BSC_TESTNET]: new Token(ChainId.BSC_TESTNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.POLYGON_MAINNET]: new Token(ChainId.POLYGON_MAINNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap'),
+  [ChainId.POLYGON_TESTNET]: new Token(ChainId.POLYGON_TESTNET, UNI_ADDRESS, 18, 'UNI', 'Uniswap')
 }
 
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {
@@ -102,14 +141,17 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
   [ChainId.BSC_MAINNET]: [WETH[ChainId.BSC_MAINNET]],
-  [ChainId.BSC_TESTNET]: [WETH[ChainId.BSC_TESTNET]]
+  [ChainId.BSC_TESTNET]: [WETH[ChainId.BSC_TESTNET]],
+  [ChainId.POLYGON_MAINNET]: [WETH[ChainId.POLYGON_MAINNET]],
+  [ChainId.POLYGON_TESTNET]: [WETH[ChainId.POLYGON_TESTNET]]
 }
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR],
-  [ChainId.BSC_MAINNET]: [...WETH_ONLY[ChainId.BSC_MAINNET], B_DAI, BUSD, B_USDT]
+  [ChainId.BSC_MAINNET]: [...WETH_ONLY[ChainId.BSC_MAINNET], B_DAI, BUSD, B_USDT],
+  [ChainId.POLYGON_MAINNET]: [...WETH_ONLY[ChainId.POLYGON_MAINNET], P_USDC, P_USDT],
 }
 
 /**
@@ -125,9 +167,11 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT],
-  [ChainId.BSC_MAINNET]: [...WETH_ONLY[ChainId.BSC_MAINNET], B_USDT, BUSD, B_DAI],
-  [ChainId.BSC_TESTNET]: [...WETH_ONLY[ChainId.BSC_TESTNET], T_USDT, T_BUSD, T_DAI]
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET]],
+  [ChainId.BSC_MAINNET]: [...WETH_ONLY[ChainId.BSC_MAINNET]],
+  [ChainId.BSC_TESTNET]: [...WETH_ONLY[ChainId.BSC_TESTNET], T_USDT, T_BUSD, T_DAI],
+  [ChainId.POLYGON_MAINNET]: [...WETH_ONLY[ChainId.POLYGON_MAINNET]],
+  [ChainId.POLYGON_TESTNET]: [...WETH_ONLY[ChainId.POLYGON_TESTNET], PT_USDT, PT_BUSD, PT_DAI]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -135,7 +179,9 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT],
   [ChainId.BSC_MAINNET]: [...WETH_ONLY[ChainId.BSC_MAINNET], B_USDT, BUSD, B_DAI],
-  [ChainId.BSC_TESTNET]: [...WETH_ONLY[ChainId.BSC_TESTNET], T_USDT, T_BUSD, T_DAI]
+  [ChainId.BSC_TESTNET]: [...WETH_ONLY[ChainId.BSC_TESTNET], T_USDT, T_BUSD, T_DAI],
+  [ChainId.POLYGON_MAINNET]: [...WETH_ONLY[ChainId.POLYGON_MAINNET], P_USDC, P_USDT],
+  [ChainId.POLYGON_TESTNET]: [...WETH_ONLY[ChainId.POLYGON_TESTNET], PT_USDT, PT_BUSD, PT_DAI]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -195,24 +241,6 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     description: 'A Crypto Wallet for Binance Smart Chain',
     href: null,
     color: '#F9A825'
-  },
-  COIN98: {
-    connector: injected,
-    name: 'Coin98 Wallet',
-    iconName: 'coin98.png',
-    description: 'Crypto Wallet & Payment Gateway',
-    href: null,
-    color: '#E8831D',
-    mobile: true
-  },
-  ONTO: {
-    connector: injected,
-    name: 'Onto Wallet',
-    iconName: 'onto.svg',
-    description: 'Ontology Data Wallet',
-    href: null,
-    color: '#E8831D',
-    mobile: true
   },
   WALLET_CONNECT: {
     connector: walletconnect,

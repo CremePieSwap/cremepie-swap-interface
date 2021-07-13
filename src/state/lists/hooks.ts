@@ -33,6 +33,8 @@ export type TokenAddressMap = Readonly<{ [chainId in ChainId]: Readonly<{ [token
 const EMPTY_LIST: TokenAddressMap = {
   [ChainId.BSC_TESTNET]: {},
   [ChainId.BSC_MAINNET]: {},
+  [ChainId.POLYGON_TESTNET]: {},
+  [ChainId.POLYGON_MAINNET]: {},
   [ChainId.KOVAN]: {},
   [ChainId.RINKEBY]: {},
   [ChainId.ROPSTEN]: {},

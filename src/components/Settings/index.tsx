@@ -19,7 +19,7 @@ import QuestionHelper from '../QuestionHelper'
 import { RowBetween, RowFixed } from '../Row'
 import Toggle from '../Toggle'
 import TransactionSettings from '../TransactionSettings'
-import SwapIcon1 from '../../assets/svg/swap_icon_1.svg'
+import Setting from '../../assets/svg/Setting.svg'
 
 // const StyledMenuIcon = styled(Settings)`
 //   height: 20px;
@@ -82,6 +82,9 @@ const StyledMenu = styled.div`
   position: relative;
   border: none;
   text-align: left;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    margin-left: 0;
+  `};
 `
 
 const MenuFlyout = styled.span`
@@ -94,7 +97,8 @@ const MenuFlyout = styled.span`
   flex-direction: column;
   font-size: 1rem;
   position: absolute;
-  top: 2rem;
+  top: 3rem;
+  right: 0;
   z-index: 100;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -180,7 +184,7 @@ export default function SettingsTab() {
           </AutoColumn>
         </ModalContentWrapper>
       </Modal>
-      <img src={SwapIcon1} alt="" style={{ marginRight: 10 }} onClick={toggle} id="open-settings-dialog-button"/>
+      <img src={Setting} alt="" style={{ marginRight: 10, cursor: 'pointer' }} onClick={toggle} id="open-settings-dialog-button"/>
       {/* <StyledMenuButton onClick={toggle} id="open-settings-dialog-button">
         <StyledMenuIcon />
         {expertMode ? (

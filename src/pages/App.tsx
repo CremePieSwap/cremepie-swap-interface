@@ -52,7 +52,7 @@ const PageWrapper = styled.div`
 
 const BodyWrapper = styled.div<{ showMenu: boolean }>`
   background: url(${main_bg}) no-repeat;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   margin-left: ${({ showMenu }) => isMobile ? '0' : showMenu ? '240px' : '56px'};

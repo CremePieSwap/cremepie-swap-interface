@@ -18,7 +18,7 @@ import { CardNoise } from '../earn/styled'
 import { TYPE } from '../../theme'
 
 import { YellowCard } from '../Card'
-// import Settings from '../Settings'
+import Settings from '../Settings'
 
 import { RowFixed } from '../Row'
 import Web3Status from '../Web3Status'
@@ -59,9 +59,9 @@ const HeaderControls = styled.div`
     justify-self: center;
     width: 100%;
     max-width: 960px;
-    padding: 1rem;
+    padding: 1rem 0;
     position: absolute;
-    left: calc(100vw - 300px);
+    left: calc(100vw - 320px);
     width: 100%;
     z-index: 99;
     height: 62px;
@@ -69,9 +69,11 @@ const HeaderControls = styled.div`
   `};
   ${({ theme }) => theme.mediaWidth.upToSmall`
     left: calc(100vw - 300px);
+    padding: 1rem 0;
   `};
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    left: calc(100vw - 170px);
+    left: calc(100vw - 180px);
+    padding: 1rem 0;
   `};
 `
 
@@ -82,8 +84,10 @@ const HeaderElement = styled.div`
   margin-right: 20px;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
-   flex-direction: row-reverse;
-    align-items: center;
+    margin-right: 0;
+  `};
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    gap: 5px;
   `};
 `
 
@@ -283,7 +287,9 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.GÖRLI]: 'Görli',
   [ChainId.KOVAN]: 'Kovan',
   [ChainId.BSC_MAINNET]: undefined,
-  [ChainId.BSC_TESTNET]: 'testnet'
+  [ChainId.BSC_TESTNET]: 'testnet',
+  [ChainId.POLYGON_MAINNET]: undefined,
+  [ChainId.POLYGON_TESTNET]: 'testnet'
 }
 
 interface HeaderProps {
@@ -384,6 +390,7 @@ export default function Header({
             ) : null}
             <Web3Status />
           </AccountElement>
+          <Settings />
         </HeaderElement>
         {/* <HeaderElementWrap>
           <Settings />
