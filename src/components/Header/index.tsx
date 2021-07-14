@@ -8,10 +8,11 @@ import { Text } from 'rebass'
 import styled from 'styled-components'
 
 import Logo from '../../assets/svg/cremepie.svg'
+import LogoMobile from '../../assets/svg/cremepie_mini.svg'
 import MenuOpen from '../../assets/svg/menu_open.svg'
 import MenuClose from '../../assets/svg/menu_close.svg'
 import { useActiveWeb3React } from '../../hooks'
-import { useDarkModeManager } from '../../state/user/hooks'
+// import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
 import { CardNoise } from '../earn/styled'
 // import { CountUp } from 'use-count-up'
@@ -26,6 +27,7 @@ import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/applicat
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'
 import { useUserHasSubmittedClaim } from '../../state/transactions/hooks'
 import { Dots } from '../swap/styleds'
+// import { isMobile } from 'react-device-detect'
 
 const HeaderFrame = styled.div`
   position: fixed;
@@ -304,7 +306,7 @@ export default function Header({
   // const { t } = useTranslation()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
-  const [isDark] = useDarkModeManager()
+  // const [isDark] = useDarkModeManager()
 
   const toggleClaimModal = useToggleSelfClaimModal()
 
@@ -349,6 +351,8 @@ export default function Header({
   //   </HeaderLinks>
   // )
 
+  const isMobile = window.innerWidth < 500
+
   return (
     <HeaderFrame>
       <ClaimModal />
@@ -358,7 +362,10 @@ export default function Header({
         </MenuIcon>
         <Title href=".">
           <UniIcon>
-            <img width={'160px'} src={isDark ? Logo : Logo} alt="logo" />
+            {isMobile ? 
+            <img src={LogoMobile} alt="logo" /> :
+            <img width={'160px'} src={Logo} alt="logo" />
+            }
           </UniIcon>
         </Title>
         <WrapLinkDesktop></WrapLinkDesktop>
