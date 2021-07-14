@@ -259,12 +259,14 @@ export default function Menu({
       </StyledAbsoluteLink> */}
       <StyledAbsoluteLink
         href="https://bridge.cremepieswap.finance/"
+        target="_blank"
       >
         <img src={Bridge} alt="bridge" />
         Bridge
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="https://docs.cremepieswap.finance/"
+        target="_blank"
       >
         <img src={Docs} alt="docs" />
         Docs
