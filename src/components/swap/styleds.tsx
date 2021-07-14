@@ -32,7 +32,7 @@ export const SectionBreak = styled.div`
 export const BottomGrouping = styled.div`
   margin-top: 2rem;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   `}
 `
 

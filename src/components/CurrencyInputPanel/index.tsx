@@ -73,6 +73,12 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
   z-index: 1;
   padding: 0 2rem;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    padding: 0 0.5rem;
+  `}
+  @media (max-width: 330px) {
+    padding: 0 0.25rem;
+  }
 `
 
 const Container = styled.div<{ hideInput: boolean }>`
@@ -101,9 +107,9 @@ const StyledBalanceMax = styled.button`
     outline: none;
   }
 
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    margin-right: 0.5rem;
-  `};
+  // ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  //   margin-right: 0.5rem;
+  // `};
 `
 
 interface CurrencyInputPanelProps {

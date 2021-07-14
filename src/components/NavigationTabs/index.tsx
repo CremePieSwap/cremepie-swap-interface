@@ -62,16 +62,33 @@ const StylePageSubtitle = styled.div`
     line-height: 32px;
   `}
 `
-const StyleButtons = styled.div`
-  img {
-    cursor: pointer;
+const StyleSpace = styled.div`
+  margin-bottom: 8rem;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  margin-bottom: 8rem;
+  `}
+  @media (max-width: 400px) {
+    margin-bottom: 6rem;
+  }
+  @media (max-width: 330px) {
+    margin-bottom: 4rem;
+  }
+`
+
+const StyleContainer = styled.div`
+  text-align: center;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    margin-top: 1rem;
+  `}
+  @media (max-width: 330px) {
+    margin-top: 0.5rem;
   }
 `
 
 export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
   // const { t } = useTranslation()
   return (
-    <div style={{ textAlign: 'center' }}>
+    <StyleContainer>
       <Tabs>
         <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
           {/* {t('swap')} */}
@@ -85,12 +102,9 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
       <StylePageTitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Exchange' : 'Your Liquidity'}</StylePageTitle>
       <StylePageSubtitle className={`${active === 'swap' ? 'swap' : 'pool'}`}>{active === 'swap' ? 'Trade tokens in an instant' : 'Remove liquidity to receive tokens back'}</StylePageSubtitle>
       {active === 'swap' && 
-        <StyleButtons style={{marginBottom: 120, display: 'flex', justifyContent: 'center'}}>
-          {/* <Settings /> */}
-          {/* <img src={SwapIcon2} alt="" /> */}
-        </StyleButtons>
+      <StyleSpace></StyleSpace>
       }
-    </div>
+    </StyleContainer>
   )
 }
 
