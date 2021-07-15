@@ -101,7 +101,7 @@ const StyledAbsoluteLink = styled.a`
       color: ${({ theme }) => theme.text3};
       :hover {
         color: ${({ theme }) => theme.text2};
-        background: #89DBC420;
+        background: #F5F5FA;
         cursor: pointer;
       }
       > img {
@@ -139,7 +139,7 @@ const StyledNotNavLink = styled.div`
     position: relative;
     :hover {
       color: ${({ theme }) => theme.text2};
-      background: #89DBC420;
+      background: #F5F5FA;
       cursor: pointer;
     }
     > img {
@@ -184,7 +184,7 @@ const StyledSubMenu = styled(NavLink).attrs({
     background-color: #FAF9FA;
     :hover {
       color: ${({ theme }) => theme.text2};
-      background: #89DBC420;
+      background: #F5F5FA;
       cursor: pointer;
     }
     > img {
