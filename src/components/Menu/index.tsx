@@ -11,6 +11,8 @@ import { isMobile } from 'react-device-detect'
 
 import Home from '../../assets/svg/home-icon.svg'
 import Trade from '../../assets/svg/trade-icon.svg'
+import Bridge from '../../assets/svg/bridge-icon.svg'
+import Docs from '../../assets/svg/docs-icon.svg'
 // import Pools from '../../assets/svg/pools_icon.svg'
 // import Farm from '../../assets/svg/farm_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
@@ -82,37 +84,37 @@ const StyledNavLink = styled(NavLink).attrs({
       }
     }
   `
-  // const StyledAbsoluteLink = styled.a`
-  //     display: flex;
-  //     align-items: center;
-  //     padding: 1rem;
-  //     overflow: hidden;
-  //     text-decoration: none;
-  //     font-weight: 600;
-  //     color: ${({ theme }) => theme.text3};
-  //     :hover {
-  //       color: ${({ theme }) => theme.text2};
-  //       background: #89DBC420;
-  //       cursor: pointer;
-  //     }
-  //     > img {
-  //       margin-right: 1.25rem;
-  //       &.active {
-  //         display: none;
-  //         margin-left: 0;
-  //       }
-  //     }
+  const StyledAbsoluteLink = styled.a`
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      overflow: hidden;
+      text-decoration: none;
+      font-weight: 600;
+      color: ${({ theme }) => theme.text3};
+      :hover {
+        color: ${({ theme }) => theme.text2};
+        background: #89DBC420;
+        cursor: pointer;
+      }
+      > img {
+        margin-right: 1.25rem;
+        &.active {
+          display: none;
+          margin-left: 0;
+        }
+      }
       
-  //     &.${activeClassName} {
-  //       > img {
-  //         &.active {
-  //           display: block;
-  //           position: absolute;
-  //           left: 0;
-  //         }
-  //       }
-  //     }
-  //   `
+      &.${activeClassName} {
+        > img {
+          &.active {
+            display: block;
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    `
 const StyledNotNavLink = styled.div`
     display: flex;
     align-items: center;
@@ -255,6 +257,20 @@ export default function Menu({
         <img src={Pools} alt="pools" />
         Pools
       </StyledAbsoluteLink> */}
+      <StyledAbsoluteLink
+        href="https://bridge.cremepieswap.finance/"
+        target="_blank"
+      >
+        <img src={Bridge} alt="bridge" />
+        Bridge
+      </StyledAbsoluteLink>
+      <StyledAbsoluteLink
+        href="https://docs.cremepieswap.finance/"
+        target="_blank"
+      >
+        <img src={Docs} alt="docs" />
+        Docs
+      </StyledAbsoluteLink>
     </MenuFlyout>
   )
 }

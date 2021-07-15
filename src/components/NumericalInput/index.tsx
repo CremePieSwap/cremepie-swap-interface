@@ -36,7 +36,7 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
     color: ${({ theme }) => theme.text1};
   }
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    font-size: 20px;
+    font-size: 16px;
   `}
 `
 
