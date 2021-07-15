@@ -27,7 +27,7 @@ import RemoveV1Exchange from './MigrateV1/RemoveV1Exchange'
 import Pool from './Pool'
 import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
-import Home from './Home'
+// import Home from './Home'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
@@ -99,7 +99,7 @@ export default function App() {
             <TopLevelModals />
             <Web3ReactManager>
               <Switch>
-                <Route exact strict path="/home" component={Home} />
+                {/* <Route exact strict path="/home" component={Home} /> */}
                 <Route exact strict path="/swap" component={Swap} />
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
                 <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />

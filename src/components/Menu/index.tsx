@@ -51,59 +51,70 @@ const MenuFlyout = styled.div<{ isMobile: boolean, showMenu: boolean }>`
 
 const activeClassName = 'ACTIVE'
 
-const StyledNavLink = styled(NavLink).attrs({
-  activeClassName
-})`
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    overflow: hidden;
-    text-decoration: none;
-    font-weight: 600;
-    color: ${({ theme }) => theme.text3};
-    :hover {
-      color: ${({ theme }) => theme.text2};
-      background: #89DBC420;
-      cursor: pointer;
-    }
-    > img {
-      margin-right: 1.25rem;
-      &.active {
-        display: none;
-        margin-left: 0;
-      }
-    }
+// const StyledNavLink = styled(NavLink).attrs({
+//   activeClassName
+// })`
+//     display: flex;
+//     align-items: center;
+//     padding: 0 1rem;
+//     height: 48px;
+//     overflow: hidden;
+//     text-decoration: none;
+//     font-weight: 600;
+//     color: ${({ theme }) => theme.text3};
+//     :hover {
+//       color: ${({ theme }) => theme.text2};
+//       background: #89DBC420;
+//       cursor: pointer;
+//     }
+//     > img {
+//       margin-right: 8px;
+//       &.active {
+//         display: none;
+//         margin-left: 0;
+//       }
+//     }
+
+//     .hide-text {
+//       color: transparent;
+//     }
     
-    &.${activeClassName} {
-      > img {
-        &.active {
-          display: block;
-          position: absolute;
-          left: 0;
-        }
-      }
-    }
-  `
-  const StyledAbsoluteLink = styled.a`
+//     &.${activeClassName} {
+//       > img {
+//         &.active {
+//           display: block;
+//           position: absolute;
+//           left: 0;
+//           width: 20px;
+//         }
+//       }
+//     }
+//   `
+const StyledAbsoluteLink = styled.a`
       display: flex;
       align-items: center;
-      padding: 1rem;
+      padding: 0 1rem;
+      height: 48px;
       overflow: hidden;
       text-decoration: none;
       font-weight: 600;
       color: ${({ theme }) => theme.text3};
       :hover {
         color: ${({ theme }) => theme.text2};
-        background: #89DBC420;
+        background: #F5F5FA;
         cursor: pointer;
       }
       > img {
-        margin-right: 1.25rem;
+        margin-right: 8px;
         &.active {
           display: none;
           margin-left: 0;
         }
       }
+
+    .hide-text {
+      color: transparent;
+    }
       
       &.${activeClassName} {
         > img {
@@ -111,6 +122,7 @@ const StyledNavLink = styled(NavLink).attrs({
             display: block;
             position: absolute;
             left: 0;
+            width: 20px;
           }
         }
       }
@@ -118,7 +130,8 @@ const StyledNavLink = styled(NavLink).attrs({
 const StyledNotNavLink = styled.div`
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 0 1rem;
+    height: 48px;
     overflow: hidden;
     text-decoration: none;
     font-weight: 600;
@@ -126,37 +139,56 @@ const StyledNotNavLink = styled.div`
     position: relative;
     :hover {
       color: ${({ theme }) => theme.text2};
-      background: #89DBC420;
+      background: #F5F5FA;
       cursor: pointer;
     }
     > img {
-      margin-right: 1.25rem;
+      margin-right: 8px;
     }
     
+    .hide-text {
+      color: transparent;
+    }
     .active {
       position: absolute;
       left: 0;
       margin-left: 0;
+      width: 20px;
     }
   `
+const StyleSubmenuContainer = styled.div`
+    overflow: hidden;
+    &.show-sub {
+      max-height: 96px;
+      transition: max-height 0.3s ease-out;
+    }
+    &.hide-sub {
+      max-height: 0;
+      transition: max-height 0.3s ease-out;
+    }
+`
+
 const StyledSubMenu = styled(NavLink).attrs({
   activeClassName
 })`
     display: flex;
     align-items: center;
-    padding: 1rem;
-    padding-left: 56px;
+    padding: 0 1rem;
+    height: 48px;
+    padding-left: 32px;
     overflow: hidden;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 600;
     color: ${({ theme }) => theme.text3};
+    font-size: 14px;
+    background-color: #FAF9FA;
     :hover {
       color: ${({ theme }) => theme.text2};
-      background: #89DBC420;
+      background: #F5F5FA;
       cursor: pointer;
     }
     > img {
-      margin-right: 1.25rem;
+      margin-right: 8px;
       &.active {
         display: none;
         margin-left: 0;
@@ -164,12 +196,12 @@ const StyledSubMenu = styled(NavLink).attrs({
     }
     
     &.${activeClassName} {
-      > img {
+      > img {$remeS
         &.active {
           display: block;
           position: absolute;
           left: 0;
-          width: 18px;
+          width: 20px;
         }
       }
     }
@@ -217,34 +249,40 @@ export default function Menu({
       isMobile={isMobile}
       className={`${isMobile ? showMenu ? 'show mobile' : 'hide' : showMenu ? 'show' : 'minimize'}`}
     >
-      <StyledNavLink id={`home-nav-link`} to={'/home'} onClick={() => {isMobile && set_show_menu(); setActiveTrade(false);}}>
+      {/* <StyledNavLink id={`home-nav-link`} to={'/home'} onClick={() => { isMobile && set_show_menu(); setActiveTrade(false); }}>
         <img className='active' src={Active} alt="active" />
         <img src={Home} alt="home" />
-        Home
-      </StyledNavLink>
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Home</span>
+      </StyledNavLink> */}
+      <StyledAbsoluteLink
+        href="https://cremepieswap.finance/"
+      >
+        <img src={Home} alt="home" />
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Home</span>
+      </StyledAbsoluteLink>
       <StyledNotNavLink onClick={handleOpenTrade}>
         {activeTrade && <img className='active' src={Active} alt="active" />}
         <img src={Trade} alt="trade" />
-        Trade
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Trade</span>
       </StyledNotNavLink>
-      {openTrade && <>
-      <StyledSubMenu id={`swap-nav-link`} to={'/swap'} onClick={handleSelectTrade}>
-        Exchange
-      </StyledSubMenu>
-      <StyledSubMenu
-        id={`pool-nav-link`}
-        to={'/pool'}
-        isActive={(match, { pathname }) =>
-          Boolean(match) ||
-          pathname.startsWith('/add') ||
-          pathname.startsWith('/remove') ||
-          pathname.startsWith('/create') ||
-          pathname.startsWith('/find')
-        } onClick={handleSelectTrade}
-      >
-        Liquidity
-      </StyledSubMenu>
-      </>}
+      <StyleSubmenuContainer className={`${openTrade ? 'show-sub' : 'hide-sub'}`}>
+        <StyledSubMenu id={`swap-nav-link`} to={'/swap'} onClick={handleSelectTrade}>
+          <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Exchange</span>
+        </StyledSubMenu>
+        <StyledSubMenu
+          id={`pool-nav-link`}
+          to={'/pool'}
+          isActive={(match, { pathname }) =>
+            Boolean(match) ||
+            pathname.startsWith('/add') ||
+            pathname.startsWith('/remove') ||
+            pathname.startsWith('/create') ||
+            pathname.startsWith('/find')
+          } onClick={handleSelectTrade}
+        >
+          <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Liquidity</span>
+        </StyledSubMenu>
+      </StyleSubmenuContainer>
       {/* <StyledAbsoluteLink
         href="http://212.47.235.97:3333/farms"
       >
@@ -259,17 +297,15 @@ export default function Menu({
       </StyledAbsoluteLink> */}
       <StyledAbsoluteLink
         href="https://bridge.cremepieswap.finance/"
-        target="_blank"
       >
         <img src={Bridge} alt="bridge" />
-        Bridge
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Bridge</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="https://docs.cremepieswap.finance/"
-        target="_blank"
       >
         <img src={Docs} alt="docs" />
-        Docs
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Docs</span>
       </StyledAbsoluteLink>
     </MenuFlyout>
   )
