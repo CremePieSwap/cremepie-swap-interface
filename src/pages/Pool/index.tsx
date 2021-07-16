@@ -144,16 +144,20 @@ export default function Pool() {
                     showDetail={() => set_show_pool_detail(!show_pool_detail)}
                   />
                 ))}
-                <Text textAlign="center" fontSize={14}>
-                    {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
-                </Text>
-                <ResponsiveButtonSecondary 
-                    as={Link} 
-                    id="import-pool-link" 
-                    to={hasV1Liquidity ? '/migrate/v1' : '/find'}
-                  >
-                    {hasV1Liquidity ? 'Migrate now.' : 'Find Other LP tokens'}
-                </ResponsiveButtonSecondary>
+                {!show_pool_detail && 
+                <>
+                  <Text textAlign="center" fontSize={14}>
+                      {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
+                  </Text>
+                  <ResponsiveButtonSecondary 
+                      as={Link} 
+                      id="import-pool-link" 
+                      to={hasV1Liquidity ? '/migrate/v1' : '/find'}
+                    >
+                      {hasV1Liquidity ? 'Migrate now.' : 'Find Other LP tokens'}
+                  </ResponsiveButtonSecondary>
+                </>
+                }
               </>
             ) : (
               <EmptyProposals>
