@@ -14,7 +14,7 @@ import Trade from '../../assets/svg/trade-icon.svg'
 import Bridge from '../../assets/svg/bridge-icon.svg'
 import Docs from '../../assets/svg/docs-icon.svg'
 // import Pools from '../../assets/svg/pools_icon.svg'
-// import Farm from '../../assets/svg/farm_icon.svg'
+import Farm from '../../assets/svg/farm_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
 
 const MenuFlyout = styled.div<{ isMobile: boolean, showMenu: boolean }>`
@@ -283,12 +283,12 @@ export default function Menu({
           <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Liquidity</span>
         </StyledSubMenu>
       </StyleSubmenuContainer>
-      {/* <StyledAbsoluteLink
-        href="http://212.47.235.97:3333/farms"
+      <StyledAbsoluteLink
+        href="https://cremepieswap.finance/farms"
       >
         <img src={Farm} alt="farm" />
         Farm
-      </StyledAbsoluteLink> */}
+      </StyledAbsoluteLink>
       {/* <StyledAbsoluteLink
         href="https://swap.bscex.org/#/swap"
       >
