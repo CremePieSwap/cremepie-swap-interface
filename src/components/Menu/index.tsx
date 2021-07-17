@@ -287,7 +287,7 @@ export default function Menu({
         href="https://cremepieswap.finance/farms"
       >
         <img src={Farm} alt="farm" />
-        Farm
+        Farms
       </StyledAbsoluteLink>
       {/* <StyledAbsoluteLink
         href="https://swap.bscex.org/#/swap"
