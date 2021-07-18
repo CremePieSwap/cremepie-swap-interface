@@ -13,7 +13,7 @@ import Home from '../../assets/svg/home-icon.svg'
 import Trade from '../../assets/svg/trade-icon.svg'
 import Bridge from '../../assets/svg/bridge-icon.svg'
 import Docs from '../../assets/svg/docs-icon.svg'
-// import Pools from '../../assets/svg/pools_icon.svg'
+import Pools from '../../assets/svg/pools_icon.svg'
 import Farm from '../../assets/svg/farm_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
 
@@ -289,12 +289,12 @@ export default function Menu({
         <img src={Farm} alt="farm" />
         Farms
       </StyledAbsoluteLink>
-      {/* <StyledAbsoluteLink
-        href="https://swap.bscex.org/#/swap"
+      <StyledAbsoluteLink
+        href="https://cremepieswap.finance/pools"
       >
         <img src={Pools} alt="pools" />
         Pools
-      </StyledAbsoluteLink> */}
+      </StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="https://bridge.cremepieswap.finance/"
       >
