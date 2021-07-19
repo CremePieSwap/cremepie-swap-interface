@@ -359,7 +359,7 @@ export default function Header({
         <MenuIcon>
           <img onClick={() => set_show_menu()} width={'25px'} src={showMenu ? MenuOpen : MenuClose} alt="menu" />
         </MenuIcon>
-        <Title href=".">
+        <Title href="https://cremepieswap.finance/">
           <UniIcon>
             {isMobile ? 
             <img src={LogoMobile} alt="logo" /> :

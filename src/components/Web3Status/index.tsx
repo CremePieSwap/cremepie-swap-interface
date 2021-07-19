@@ -41,7 +41,7 @@ const Web3StatusGeneric = styled(ButtonSecondary)`
   width: 100%;
   align-items: center;
   padding: 0.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: pointer;
   user-select: none;
   :focus {
@@ -100,6 +100,7 @@ const Text = styled.p`
   font-size: 1rem;
   width: fit-content;
   font-weight: 600;
+  color: #fff;
 `
 
 const NetworkIcon = styled(Activity)`
@@ -211,9 +212,9 @@ function Web3StatusInner() {
       <Web3StatusConnect id="connect-wallet" 
         onClick={toggleWalletModal} 
         faded={!account} 
-        style={{marginLeft: 30}}
+        style={{marginLeft: '1rem'}}
       >
-        <Text>Connect wallet</Text>
+        <Text>Connect</Text>
       </Web3StatusConnect>
     )
   }
