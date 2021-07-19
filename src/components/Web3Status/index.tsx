@@ -20,8 +20,6 @@ import { shortenAddress } from '../../utils'
 import { ButtonSecondary } from '../Button'
 import BinanceIcon from '../../assets/images/matic.png'
 
-import Settings from '../Settings'
-
 import Identicon from '../Identicon'
 import Loader from '../Loader'
 
@@ -199,7 +197,6 @@ function Web3StatusInner() {
         )}
         {!hasPendingTransactions && connector && <StatusIcon connector={connector} />}
       </Web3StatusConnected>
-      <Settings />
       </>
     )
   } else if (error) {

@@ -62,7 +62,7 @@ const HeaderControls = styled.div`
     max-width: 960px;
     padding: 1rem 0;
     position: absolute;
-    left: calc(100vw - 320px);
+    left: calc(100vw - 285px);
     width: 100%;
     z-index: 99;
     height: 62px;
@@ -73,7 +73,7 @@ const HeaderControls = styled.div`
     padding: 1rem 0;
   `};
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    left: calc(100vw - 180px);
+    left: calc(100vw - 165px);
     padding: 1rem 0;
   `};
 `
@@ -82,7 +82,6 @@ const HeaderElement = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-right: 20px;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
     margin-right: 0;
