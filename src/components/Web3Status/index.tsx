@@ -100,7 +100,6 @@ const Text = styled.p`
   font-size: 1rem;
   width: fit-content;
   font-weight: 600;
-  color: #fff;
 `
 
 const NetworkIcon = styled(Activity)`
@@ -214,7 +213,7 @@ function Web3StatusInner() {
         faded={!account} 
         style={{marginLeft: '1rem'}}
       >
-        <Text>Connect</Text>
+        <Text style={{color: '#fff'}}>Connect</Text>
       </Web3StatusConnect>
     )
   }
