@@ -19,7 +19,7 @@ import QuestionHelper from '../QuestionHelper'
 import { RowBetween, RowFixed } from '../Row'
 import Toggle from '../Toggle'
 import TransactionSettings from '../TransactionSettings'
-import Setting from '../../assets/svg/Setting.svg'
+import Setting from '../../assets/svg/setting-icon.svg'
 
 // const StyledMenuIcon = styled(Settings)`
 //   height: 20px;
