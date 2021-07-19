@@ -21,6 +21,7 @@ import TradePrice from '../../components/swap/TradePrice'
 import FormattedPriceImpact from '../../components/swap/FormattedPriceImpact'
 import TokenWarningModal from '../../components/TokenWarningModal'
 import ProgressSteps from '../../components/ProgressSteps'
+import Settings from '../../components/Settings'
 
 import { BETTER_TRADE_LINK_THRESHOLD } from '../../constants'
 import { getTradeVersion, isTradeBetter } from '../../data/V1'
@@ -313,6 +314,7 @@ export default function Swap() {
             onDismiss={handleConfirmDismiss}
           />
 
+          <SettingsWrapper><Settings/></SettingsWrapper>
           <AutoColumn gap={'lg'}>
             <CurrencyInputPanel
               label={independentField === Field.OUTPUT && !showWrap && trade ? 'From (estimated)' : 'From'}
@@ -549,4 +551,11 @@ const SwapDetails = styled.div`
   padding: 0.75rem 1rem;
   min-width: 300px;
   margin-top: 1rem;
+`
+
+const SettingsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem 0.5rem
 `

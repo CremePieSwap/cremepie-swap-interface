@@ -63,15 +63,12 @@ const StylePageSubtitle = styled.div`
   `}
 `
 const StyleSpace = styled.div`
-  margin-bottom: 8rem;
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-  margin-bottom: 8rem;
-  `}
+  margin-bottom: 6rem;
   @media (max-width: 400px) {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
   }
   @media (max-width: 330px) {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 `
 

@@ -97,16 +97,22 @@ const MenuFlyout = styled.span`
   flex-direction: column;
   font-size: 1rem;
   position: absolute;
-  top: 3rem;
+  top: 2rem;
   right: 0;
   z-index: 100;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     min-width: 22.125rem;
+    right: -2rem;
   `};
 
   @media (max-width: 400px) {
-    min-width: 100vw;
+    min-width: 90vw;
+    right: -3rem;
+  }
+  @media (max-width: 330px) {
+    min-width: 90vw;
+    right: -3rem;
   }
 `
 
