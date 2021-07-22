@@ -287,13 +287,13 @@ export default function Menu({
         href="https://cremepieswap.finance/farms"
       >
         <img src={Farm} alt="farm" />
-        Farms
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Farms</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="https://cremepieswap.finance/pools"
       >
         <img src={Pools} alt="pools" />
-        Pools
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Pools</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="https://bridge.cremepieswap.finance/"
