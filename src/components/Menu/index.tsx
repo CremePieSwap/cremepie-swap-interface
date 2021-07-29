@@ -16,6 +16,10 @@ import Docs from '../../assets/svg/docs-icon.svg'
 import Pools from '../../assets/svg/pools_icon.svg'
 import Farm from '../../assets/svg/farm_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
+import Facebook from '../../assets/svg/facebook.svg'
+import Reddit from '../../assets/svg/reddit.svg'
+import Telegram from '../../assets/svg/telegram.svg'
+import Twitter from '../../assets/svg/twitter.svg'
 
 const MenuFlyout = styled.div<{ isMobile: boolean, showMenu: boolean }>`
   position: fixed;
@@ -207,6 +211,25 @@ const StyledSubMenu = styled(NavLink).attrs({
     }
   `
 
+const MenuFooter = styled.div`
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 20px 4px;
+  .price {
+    color: rgb(110, 163, 170);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .social-icons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+`
 interface MenuProps {
   showMenu: boolean,
   set_show_menu: () => void,
@@ -307,6 +330,15 @@ export default function Menu({
         <img src={Docs} alt="docs" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Docs</span>
       </StyledAbsoluteLink>
+      <MenuFooter>
+        <div className='price'>CPIE $-...</div>
+        <div className='social-icons'>
+          <div><a href="https://www.facebook.com/CremePieSwap"><img src={Facebook} alt="facebook" /></a></div>
+          <div><a href="https://twitter.com/CremePieSwap"><img src={Twitter} alt="Twitter" /></a></div>
+          <div><a href="https://www.reddit.com/r/CremePieSwapOfficial"><img src={Reddit} alt="Reddit" /></a></div>
+          <div><a href="https://t.me/cremepieswapofficial"><img src={Telegram} alt="Telegram" /></a></div>
+        </div>
+      </MenuFooter>
     </MenuFlyout>
   )
 }
