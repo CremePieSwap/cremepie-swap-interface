@@ -11,7 +11,6 @@ import { isMobile } from 'react-device-detect'
 
 import Home from '../../assets/svg/home-icon.svg'
 import Trade from '../../assets/svg/trade-icon.svg'
-import Bridge from '../../assets/svg/bridge-icon.svg'
 import Docs from '../../assets/svg/docs-icon.svg'
 import Pools from '../../assets/svg/pools_icon.svg'
 import Farm from '../../assets/svg/farm_icon.svg'
@@ -317,12 +316,6 @@ export default function Menu({
       >
         <img src={Pools} alt="pools" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Pools</span>
-      </StyledAbsoluteLink>
-      <StyledAbsoluteLink
-        href="https://bridge.cremepieswap.finance/"
-      >
-        <img src={Bridge} alt="bridge" />
-        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Bridge</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="https://docs.cremepieswap.finance/"
