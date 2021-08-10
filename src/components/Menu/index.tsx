@@ -14,6 +14,7 @@ import Trade from '../../assets/svg/trade-icon.svg'
 import Docs from '../../assets/svg/docs-icon.svg'
 import Pools from '../../assets/svg/pools_icon.svg'
 import Farm from '../../assets/svg/farm_icon.svg'
+import Lottery from '../../assets/svg/lottery_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
 import Facebook from '../../assets/svg/facebook.svg'
 import Reddit from '../../assets/svg/reddit.svg'
@@ -316,6 +317,12 @@ export default function Menu({
       >
         <img src={Pools} alt="pools" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Pools</span>
+      </StyledAbsoluteLink>
+      <StyledAbsoluteLink
+        href="https://lottery.cremepieswap.finance/"
+      >
+        <img src={Lottery} alt="lottery" />
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Lottery</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
         href="https://docs.cremepieswap.finance/"
