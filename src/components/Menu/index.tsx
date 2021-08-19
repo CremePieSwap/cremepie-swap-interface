@@ -15,6 +15,7 @@ import Docs from '../../assets/svg/docs-icon.svg'
 import Pools from '../../assets/svg/pools_icon.svg'
 import Farm from '../../assets/svg/farm_icon.svg'
 import Lottery from '../../assets/svg/lottery_icon.svg'
+import Info from '../../assets/svg/info_icon.svg'
 import Active from '../../assets/svg/active_menu.svg'
 import Facebook from '../../assets/svg/facebook.svg'
 import Reddit from '../../assets/svg/reddit.svg'
@@ -329,6 +330,12 @@ export default function Menu({
       >
         <img src={Docs} alt="docs" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Docs</span>
+      </StyledAbsoluteLink>
+      <StyledAbsoluteLink
+        href="https://info.cremepieswap.finance/"
+      >
+        <img src={Info} alt="info" />
+        <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Info</span>
       </StyledAbsoluteLink>
       <MenuFooter>
         <div className='price'>CPIE $-...</div>
