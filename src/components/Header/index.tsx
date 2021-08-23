@@ -7,7 +7,7 @@ import { Text } from 'rebass'
 
 import styled from 'styled-components'
 
-import Logo from '../../assets/svg/cremepie.svg'
+import Logo from '../../assets/svg/logo-cremepie.svg'
 import LogoMobile from '../../assets/svg/cremepie_mini.svg'
 import MenuOpen from '../../assets/svg/menu_open.svg'
 import MenuClose from '../../assets/svg/menu_close.svg'
