@@ -279,7 +279,7 @@ export default function Menu({
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Home</span>
       </StyledNavLink> */}
       <StyledAbsoluteLink
-        href="https://cremepieswap.finance/"
+        href="https://cremepieswapfinance.com/"
       >
         <img src={Home} alt="home" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Home</span>
@@ -308,31 +308,31 @@ export default function Menu({
         </StyledSubMenu>
       </StyleSubmenuContainer>
       <StyledAbsoluteLink
-        href="https://cremepieswap.finance/farms"
+        href="https://cremepieswapfinance.com/farms"
       >
         <img src={Farm} alt="farm" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Farms</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
-        href="https://cremepieswap.finance/pools"
+        href="https://cremepieswapfinance.com/pools"
       >
         <img src={Pools} alt="pools" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Pools</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
-        href="https://lottery.cremepieswap.finance/"
+        href="https://lottery.cremepieswapfinance.com/"
       >
         <img src={Lottery} alt="lottery" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Lottery</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
-        href="https://docs.cremepieswap.finance/"
+        href="https://docs.cremepieswapfinance.com/"
       >
         <img src={Docs} alt="docs" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Docs</span>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink
-        href="https://info.cremepieswap.finance/"
+        href="https://info.cremepieswapfinance.com/"
       >
         <img src={Info} alt="info" />
         <span className={`${showMenu ? 'show-text' : 'hide-text'}`}>Info</span>
